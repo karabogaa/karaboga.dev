@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>Cihat Karaboğa — Mobile Software Engineer &amp; Flutter Developer</title>
-  <meta name="description" content="Cihat Karaboğa is a mobile software engineer with 5+ years building fast, clean iOS and Android apps in Flutter and Dart.">
+  <meta name="description" id="meta-description" content="Cihat Karaboğa is a mobile software engineer in Istanbul with 5+ years building fast, reliable iOS and Android apps in Flutter and Dart.">
   <meta name="author" content="Cihat Karaboğa">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
   <link rel="canonical" href="https://karaboga.dev/">
@@ -15,9 +15,10 @@
   <meta property="og:type" content="profile">
   <meta property="og:site_name" content="karaboga.dev">
   <meta property="og:title" content="Cihat Karaboğa — Mobile Software Engineer &amp; Flutter Developer">
-  <meta property="og:description" content="5+ years building fast, clean iOS and Android apps in Flutter and Dart.">
+  <meta property="og:description" content="5+ years building fast, reliable iOS and Android apps in Flutter and Dart.">
   <meta property="og:url" content="https://karaboga.dev/">
   <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="tr_TR">
   <meta property="og:image" content="https://karaboga.dev/og.png">
   <meta property="og:image:secure_url" content="https://karaboga.dev/og.png">
   <meta property="og:image:type" content="image/png">
@@ -31,7 +32,7 @@
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Cihat Karaboğa — Mobile Software Engineer &amp; Flutter Developer">
-  <meta name="twitter:description" content="5+ years building fast, clean iOS and Android apps in Flutter and Dart.">
+  <meta name="twitter:description" content="5+ years building fast, reliable iOS and Android apps in Flutter and Dart.">
   <meta name="twitter:image" content="https://karaboga.dev/og.png">
   <meta name="twitter:image:alt" content="Cihat Karaboğa — Mobile Software Engineer">
   <meta name="twitter:site" content="@karabogadev">
@@ -46,7 +47,7 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap">
 
   <script type="application/ld+json">
   {
@@ -72,7 +73,7 @@
         "mainEntity": { "@id": "https://karaboga.dev/#person" },
         "primaryImageOfPage": { "@id": "https://karaboga.dev/#primaryimage" },
         "dateCreated": "2026-05-19",
-        "dateModified": "2026-05-19",
+        "dateModified": "2026-09-01",
         "inLanguage": "en"
       },
       {
@@ -101,9 +102,23 @@
         },
         "description": "Mobile software engineer specializing in Flutter and Dart for cross-platform iOS and Android apps.",
         "email": "mailto:cihat@karaboga.dev",
-        "address": { "@type": "PostalAddress", "addressCountry": "TR" },
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Istanbul",
+          "addressCountry": "TR"
+        },
+        "worksFor": { "@type": "Organization", "name": "Altur Teknoloji" },
+        "alumniOf": {
+          "@type": "CollegeOrUniversity",
+          "name": "Fırat University",
+          "sameAs": "https://www.firat.edu.tr/"
+        },
         "knowsLanguage": ["Turkish", "English"],
-        "knowsAbout": ["Flutter", "Dart", "Mobile app development", "iOS development", "Android development", "Cross-platform development"],
+        "knowsAbout": [
+          "Flutter", "Dart", "Mobile app development", "iOS development",
+          "Android development", "Cross-platform development", "BLoC",
+          "Riverpod", "Clean Architecture", "Firebase", "CI/CD"
+        ],
         "sameAs": [
           "https://github.com/karabogadev",
           "https://www.linkedin.com/in/karabogadev/",
@@ -114,14 +129,24 @@
   }
   </script>
 
-  <!-- set theme before paint to avoid flash -->
+  <!-- resolve theme + language before paint to avoid a flash -->
   <script>
     (function () {
+      var d = document.documentElement;
+      d.classList.add('js');
+
       var stored = localStorage.getItem('theme');
       var theme = stored || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-      document.documentElement.setAttribute('data-theme', theme);
+      d.setAttribute('data-theme', theme);
       var meta = document.getElementById('theme-color');
       if (meta) meta.content = theme === 'dark' ? '#0e0e0d' : '#fbfbfa';
+
+      // URL wins over the stored choice so ?lang=tr links are shareable
+      var param = new URLSearchParams(location.search).get('lang');
+      var lang = (param === 'tr' || param === 'en') ? param
+        : localStorage.getItem('lang')
+        || ((navigator.language || 'en').toLowerCase().indexOf('tr') === 0 ? 'tr' : 'en');
+      d.setAttribute('data-lang', lang);
     })();
   </script>
 
@@ -129,32 +154,59 @@
     *,*::before,*::after { box-sizing: border-box; margin: 0 }
 
     :root {
+      /* type */
       --font: "Geist", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, Roboto, "Helvetica Neue", Arial, sans-serif;
-      --wrap: 42rem;
+      --mono: "Geist Mono", ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+      --t-meta: .75rem;
+      --t-ui:   .875rem;
+      --t-body: 1rem;
+      --t-lead: clamp(1.02rem, .98rem + .25vw, 1.14rem);
+      --t-h2:   1.0625rem;
+      --t-h1:   clamp(2.1rem, 1.5rem + 3vw, 3.15rem);
+
+      /* rhythm */
+      --wrap: 48rem;
+      --rail: 8.5rem;
+      --gutter: 2.75rem;
       --pad: clamp(1.25rem, 5vw, 2rem);
+      --section-y: clamp(3rem, 7vw, 4.75rem);
+
+      --radius: .55rem;
       --transition: .18s ease;
       --ease: cubic-bezier(.22,.61,.36,1);
     }
 
+    /* Every ink/accent pair below is WCAG AA (>=4.5:1) against its own --bg.
+       --accent stays vivid for decoration; --accent-ink is the text-safe tone. */
     [data-theme="light"] {
       --bg: #fbfbfa;
-      --bg-tint: rgba(251,251,250,.72);
+      --bg-tint: rgba(251,251,250,.76);
+      --surface: rgba(22,21,15,.035);
       --ink: #16150f;
-      --ink-2: #6b6862;
-      --border: rgba(0,0,0,.12);
+      --ink-2: #5f5c56;
+      --ink-3: #74716c;
+      --border: rgba(22,21,15,.12);
+      --border-2: rgba(22,21,15,.22);
       --accent: #e0481f;
+      --accent-ink: #c23d18;
       --accent-soft: rgba(224,72,31,.09);
+      --on-accent: #fff7f3;
       color-scheme: light;
     }
 
     [data-theme="dark"] {
       --bg: #0e0e0d;
       --bg-tint: rgba(14,14,13,.72);
+      --surface: rgba(255,255,255,.038);
       --ink: #f5f5f4;
-      --ink-2: #8d8a83;
-      --border: rgba(255,255,255,.14);
+      --ink-2: #a3a09a;
+      --ink-3: #8b8880;
+      --border: rgba(255,255,255,.11);
+      --border-2: rgba(255,255,255,.2);
       --accent: #ff6a3d;
-      --accent-soft: rgba(255,106,61,.14);
+      --accent-ink: #ff6a3d;
+      --accent-soft: rgba(255,106,61,.13);
+      --on-accent: #1a0a04;
       color-scheme: dark;
     }
 
@@ -162,6 +214,7 @@
 
     body {
       font-family: var(--font);
+      font-size: var(--t-body);
       background: var(--bg);
       color: var(--ink);
       line-height: 1.65;
@@ -180,7 +233,7 @@
       inset: 0;
       z-index: -1;
       pointer-events: none;
-      background: radial-gradient(42rem 30rem at 50% -9%, var(--accent-soft), transparent 70%);
+      background: radial-gradient(44rem 30rem at 50% -10%, var(--accent-soft), transparent 70%);
     }
 
     a { color: inherit }
@@ -194,7 +247,22 @@
     }
     .skip:focus { left: 0 }
 
-    /* constrained container — used by header, sections and footer */
+    /* mono metadata — years, counts, repo names */
+    .mono {
+      font-family: var(--mono);
+      font-variant-numeric: tabular-nums;
+      letter-spacing: 0;
+    }
+
+    /* eyebrow / rail labels */
+    .eyebrow {
+      font-family: var(--mono);
+      font-size: var(--t-meta);
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--ink-3);
+    }
+
     .wrap {
       width: 100%;
       max-width: var(--wrap);
@@ -202,14 +270,14 @@
       padding-inline: var(--pad);
     }
 
-    /* ---- header ---- */
+    /* ---------- header ---------- */
     .site-header {
       position: sticky;
       top: 0;
       z-index: 10;
       background: var(--bg-tint);
-      -webkit-backdrop-filter: blur(10px) saturate(160%);
-      backdrop-filter: blur(10px) saturate(160%);
+      -webkit-backdrop-filter: blur(12px) saturate(160%);
+      backdrop-filter: blur(12px) saturate(160%);
       border-bottom: 1px solid var(--border);
       animation: fade .6s ease backwards;
     }
@@ -219,8 +287,8 @@
     .header-inner {
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      padding-block: .85rem;
+      gap: 1.25rem;
+      padding-block: .8rem;
     }
     .brand {
       display: inline-flex;
@@ -241,9 +309,57 @@
       background: var(--accent);
       box-shadow: 0 0 .55rem var(--accent);
     }
-    .brand:hover { color: var(--accent) }
+    .brand:hover { color: var(--accent-ink) }
 
-    /* ---- theme toggle ---- */
+    .site-nav {
+      display: flex;
+      gap: 1.35rem;
+      margin-left: auto;
+      font-size: var(--t-ui);
+    }
+    .site-nav a {
+      color: var(--ink-2);
+      text-decoration: none;
+      transition: color var(--transition);
+    }
+    .site-nav a:hover { color: var(--ink) }
+    @media (max-width: 46rem) { .site-nav { display: none } }
+
+    .header-tools {
+      display: flex;
+      align-items: center;
+      gap: .4rem;
+      margin-left: auto;
+    }
+    .site-nav ~ .header-tools { margin-left: 0 }
+
+    /* language switch — segmented, so the current language is never ambiguous */
+    .lang {
+      display: inline-flex;
+      align-items: center;
+      border: 1px solid var(--border);
+      border-radius: 2rem;
+      padding: .1rem;
+      font-family: var(--mono);
+      font-size: var(--t-meta);
+    }
+    .lang button {
+      border: 0;
+      background: transparent;
+      cursor: pointer;
+      color: var(--ink-3);
+      padding: .2rem .5rem;
+      border-radius: 2rem;
+      line-height: 1.5;
+      font: inherit;
+      transition: color var(--transition), background var(--transition);
+    }
+    .lang button:hover { color: var(--ink) }
+    .lang button[aria-pressed="true"] {
+      color: var(--ink);
+      background: var(--surface);
+    }
+
     .theme-btn {
       width: 2.1rem;
       height: 2.1rem;
@@ -269,56 +385,233 @@
     [data-theme="dark"] .icon-sun { opacity: 1; transform: none }
     [data-theme="dark"] .icon-moon { opacity: 0; transform: rotate(80deg) scale(.5) }
 
-    /* ---- sections ---- */
+    /* ---------- sections ---------- */
     main { flex: 1 }
-    .section { padding-block: clamp(2.25rem, 6vw, 3.5rem) }
+    .section { padding-block: var(--section-y); scroll-margin-top: 4rem }
     .section + .section { border-top: 1px solid var(--border) }
-    .intro { padding-top: clamp(3.25rem, 9vw, 5.5rem) }
+    .hero { padding-top: clamp(3.5rem, 9vw, 6rem) }
 
-    .section-title {
-      font-size: 1.2rem;
+    /* label rail on the left, content on the right — one column on small screens */
+    .grid {
+      display: grid;
+      grid-template-columns: var(--rail) minmax(0, 1fr);
+      column-gap: var(--gutter);
+    }
+    .rail {
+      position: sticky;
+      top: 4.75rem;
+      align-self: start;
+      display: flex;
+      flex-direction: column;
+      gap: .15rem;
+    }
+    .rail-num {
+      font-family: var(--mono);
+      font-size: var(--t-meta);
+      color: var(--accent-ink);
+      letter-spacing: .08em;
+    }
+    .rail-label {
+      font-size: var(--t-h2);
       font-weight: 600;
       letter-spacing: -.022em;
-      margin-bottom: 1.1rem;
-    }
-
-    /* ---- intro ---- */
-    h1 {
-      font-size: clamp(1.85rem, 5.5vw, 2.5rem);
-      font-weight: 600;
-      letter-spacing: -.038em;
-      line-height: 1.12;
       text-wrap: balance;
     }
-    .role {
-      font-size: 1rem;
-      font-weight: 500;
-      color: var(--ink-2);
-      margin-top: .4rem;
+    @media (max-width: 46rem) {
+      .grid { grid-template-columns: 1fr; row-gap: 1.4rem }
+      .rail { position: static; flex-direction: row; align-items: baseline; gap: .6rem }
     }
-    .bio {
-      font-size: 1.02rem;
+
+    /* ---------- hero ---------- */
+    h1 {
+      font-size: var(--t-h1);
+      font-weight: 600;
+      letter-spacing: -.04em;
+      line-height: 1.08;
+      text-wrap: balance;
+      margin-top: .7rem;
+    }
+    .lead {
+      font-size: var(--t-lead);
       color: var(--ink-2);
-      max-width: 46ch;
-      margin-top: 1.5rem;
-      line-height: 1.72;
+      max-width: 44ch;
+      margin-top: 1.35rem;
+      line-height: 1.7;
       text-wrap: pretty;
     }
-    .links {
+    .status {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      margin-top: 1.6rem;
+      font-size: var(--t-ui);
+      color: var(--ink-2);
+    }
+    .status::before {
+      content: "";
+      width: .45rem; height: .45rem;
+      border-radius: 50%;
+      background: #2fbf71;
+      box-shadow: 0 0 0 .2rem rgba(47,191,113,.18);
+    }
+    .cta {
       display: flex;
       flex-wrap: wrap;
-      gap: .55rem 1.5rem;
-      margin-top: 2rem;
+      gap: .6rem;
+      margin-top: 1.9rem;
     }
-    .links a {
-      position: relative;
-      font-size: .95rem;
-      color: var(--ink-2);
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: .45rem;
+      font-size: var(--t-ui);
+      font-weight: 500;
       text-decoration: none;
-      padding-block: .15rem;
+      padding: .6rem 1.05rem;
+      border-radius: var(--radius);
+      border: 1px solid transparent;
+      transition: background var(--transition), border-color var(--transition),
+                  color var(--transition), transform var(--transition);
+    }
+    .btn svg { width: .9rem; height: .9rem }
+    .btn-primary { background: var(--accent); color: var(--on-accent) }
+    .btn-primary:hover { filter: brightness(1.08); transform: translateY(-1px) }
+    .btn-ghost { border-color: var(--border-2); color: var(--ink-2) }
+    .btn-ghost:hover { border-color: var(--ink); color: var(--ink); transform: translateY(-1px) }
+    .btn:active { transform: translateY(0) scale(.98) }
+
+    /* ---------- work rows ---------- */
+    .rows { border-top: 1px solid var(--border) }
+    .row {
+      display: block;
+      position: relative;
+      padding: 1.15rem 2rem 1.25rem .85rem;
+      margin-inline: -.85rem;
+      border-bottom: 1px solid var(--border);
+      text-decoration: none;
+      border-radius: var(--radius);
+      transition: background var(--transition);
+    }
+    .row:hover { background: var(--surface) }
+    .row-head {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: .25rem 1rem;
+    }
+    .row-title {
+      font-family: var(--mono);
+      font-size: .95rem;
+      font-weight: 500;
+      letter-spacing: -.01em;
       transition: color var(--transition);
     }
-    .links a::after {
+    .row:hover .row-title { color: var(--accent-ink) }
+    .row-meta { font-family: var(--mono); font-size: var(--t-meta); color: var(--ink-3) }
+    .row-desc {
+      color: var(--ink-2);
+      font-size: .95rem;
+      margin-top: .35rem;
+      max-width: 54ch;
+      text-wrap: pretty;
+    }
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .35rem;
+      margin-top: .75rem;
+      list-style: none;
+      padding: 0;
+    }
+    .tags li {
+      font-family: var(--mono);
+      font-size: var(--t-meta);
+      color: var(--ink-3);
+      border: 1px solid var(--border);
+      border-radius: 2rem;
+      padding: .1rem .5rem;
+    }
+    .row-arrow {
+      position: absolute;
+      top: 1.3rem; right: .75rem;
+      width: .85rem; height: .85rem;
+      color: var(--ink-3);
+      transition: transform .25s var(--ease), color var(--transition);
+    }
+    .row:hover .row-arrow { color: var(--accent-ink); transform: translate(2px, -2px) }
+
+    .more {
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+      margin-top: 1.15rem;
+      font-size: var(--t-ui);
+      color: var(--ink-2);
+      text-decoration: none;
+      transition: color var(--transition), gap var(--transition);
+    }
+    .more:hover { color: var(--accent-ink); gap: .65rem }
+
+    /* ---------- experience ---------- */
+    .xp { display: grid; grid-template-columns: 8rem minmax(0, 1fr); gap: 0 1.25rem }
+    .xp + .xp { margin-top: 1.9rem; padding-top: 1.9rem; border-top: 1px solid var(--border) }
+    .xp-when {
+      font-family: var(--mono);
+      font-size: var(--t-meta);
+      font-variant-numeric: tabular-nums;
+      color: var(--ink-3);
+      padding-top: .22rem;
+      white-space: nowrap;
+    }
+    .xp-role { font-size: var(--t-body); font-weight: 600; letter-spacing: -.018em }
+    .xp-org { font-size: var(--t-ui); color: var(--ink-2); margin-top: .05rem }
+    .xp-desc {
+      font-size: .95rem;
+      color: var(--ink-2);
+      margin-top: .55rem;
+      max-width: 56ch;
+      text-wrap: pretty;
+    }
+    @media (max-width: 34rem) {
+      .xp { grid-template-columns: 1fr; gap: .35rem }
+      .xp-when { padding-top: 0 }
+    }
+
+    /* ---------- stack ---------- */
+    .stack { display: grid; grid-template-columns: 9.5rem minmax(0, 1fr); gap: .9rem 1.25rem }
+    .stack dt { font-size: var(--t-ui); color: var(--ink-3) }
+    .stack dd { font-size: .95rem; margin: 0; text-wrap: pretty }
+    @media (max-width: 34rem) {
+      .stack { grid-template-columns: 1fr; gap: .25rem }
+      .stack dd + dt { margin-top: .9rem }
+    }
+
+    /* ---------- about ---------- */
+    .prose p { color: var(--ink-2); max-width: 56ch; text-wrap: pretty }
+    .prose p + p { margin-top: 1rem }
+
+    /* ---------- footer ---------- */
+    .site-footer { border-top: 1px solid var(--border) }
+    .footer-inner {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: .9rem 1.5rem;
+      padding-block: 1.75rem;
+      font-size: var(--t-ui);
+      color: var(--ink-3);
+    }
+    .footer-links { display: flex; flex-wrap: wrap; gap: .55rem 1.25rem }
+    .footer-links a {
+      position: relative;
+      color: var(--ink-2);
+      text-decoration: none;
+      padding-block: .1rem;
+      transition: color var(--transition);
+    }
+    .footer-links a::after {
       content: "";
       position: absolute;
       left: 0; bottom: 0;
@@ -328,111 +621,415 @@
       transform-origin: left;
       transition: transform .28s var(--ease);
     }
-    .links a:hover,
-    .links a:focus-visible { color: var(--accent) }
-    .links a:hover::after,
-    .links a:focus-visible::after { transform: scaleX(1) }
+    .footer-links a:hover,
+    .footer-links a:focus-visible { color: var(--accent-ink) }
+    .footer-links a:hover::after,
+    .footer-links a:focus-visible::after { transform: scaleX(1) }
+    .footer-note { font-size: var(--t-meta) }
 
-    /* ---- footer ---- */
-    .site-footer { border-top: 1px solid var(--border) }
-    .footer-inner {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      gap: .35rem 1.5rem;
-      padding-block: 1.5rem;
-      font-size: .8rem;
-      color: var(--ink-2);
-    }
-
-    /* ---- entrance ---- */
+    /* ---------- motion ---------- */
     @keyframes up { from { opacity: 0; transform: translateY(10px) } to { opacity: 1; transform: none } }
     @keyframes fade { from { opacity: 0 } to { opacity: 1 } }
-    .intro h1     { animation: up .6s .06s var(--ease) backwards }
-    .intro .role  { animation: up .6s .14s var(--ease) backwards }
-    .intro .bio   { animation: up .6s .22s var(--ease) backwards }
-    .intro .links { animation: up .6s .3s var(--ease) backwards }
-    .site-footer  { animation: fade .8s .35s ease backwards }
+    .hero .eyebrow { animation: up .6s .04s var(--ease) backwards }
+    .hero h1       { animation: up .6s .1s  var(--ease) backwards }
+    .hero .lead    { animation: up .6s .18s var(--ease) backwards }
+    .hero .status  { animation: up .6s .26s var(--ease) backwards }
+    .hero .cta     { animation: up .6s .32s var(--ease) backwards }
+
+    /* only hide pre-reveal content when JS can bring it back */
+    .js .reveal { opacity: 0; transform: translateY(12px) }
+    .js .reveal.is-visible {
+      opacity: 1;
+      transform: none;
+      transition: opacity .55s var(--ease), transform .55s var(--ease);
+      transition-delay: calc(var(--i, 0) * 70ms);
+    }
 
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto }
       *,*::before,*::after { animation: none !important; transition: none !important }
+      .js .reveal { opacity: 1; transform: none }
     }
   </style>
 </head>
 <body>
-  <a class="skip" href="#main">Skip to content</a>
+  <a class="skip" href="#main" data-i18n="a11y.skip">Skip to content</a>
 
   <header class="site-header">
     <div class="wrap header-inner">
       <a class="brand" href="/" aria-label="Cihat Karaboğa — home">karaboga.dev</a>
-      <button class="theme-btn" id="theme-toggle" aria-label="Toggle light/dark theme">
-        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
-        </svg>
-        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <circle cx="12" cy="12" r="5"/>
-          <line x1="12" y1="1" x2="12" y2="3"/>
-          <line x1="12" y1="21" x2="12" y2="23"/>
-          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
-          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
-          <line x1="1" y1="12" x2="3" y2="12"/>
-          <line x1="21" y1="12" x2="23" y2="12"/>
-          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
-          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
-        </svg>
-      </button>
+
+      <nav class="site-nav" aria-label="Sections">
+        <a href="#work" data-i18n="nav.work">Work</a>
+        <a href="#experience" data-i18n="nav.experience">Experience</a>
+        <a href="#stack" data-i18n="nav.stack">Stack</a>
+        <a href="#about" data-i18n="nav.about">About</a>
+      </nav>
+
+      <div class="header-tools">
+        <div class="lang" role="group" aria-label="Language">
+          <button type="button" data-lang-btn="en" aria-pressed="true">EN</button>
+          <button type="button" data-lang-btn="tr" aria-pressed="false">TR</button>
+        </div>
+        <button class="theme-btn" id="theme-toggle" data-i18n-label="a11y.theme" aria-label="Toggle light/dark theme">
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="5"/>
+            <line x1="12" y1="1" x2="12" y2="3"/>
+            <line x1="12" y1="21" x2="12" y2="23"/>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+            <line x1="1" y1="12" x2="3" y2="12"/>
+            <line x1="21" y1="12" x2="23" y2="12"/>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+          </svg>
+        </button>
+      </div>
     </div>
   </header>
 
   <main id="main">
-    <section class="section intro" aria-labelledby="name">
+    <!-- hero -->
+    <section class="section hero" aria-labelledby="name">
       <div class="wrap">
+        <p class="eyebrow" data-i18n="hero.eyebrow">Mobile Software Engineer · Istanbul, Türkiye</p>
         <h1 id="name">Cihat Karaboğa</h1>
-        <p class="role">Mobile Software Engineer</p>
-        <p class="bio">
+        <p class="lead" data-i18n="hero.lead">
           I build fast, clean mobile apps for iOS and Android with Flutter and Dart.
           5+ years turning ideas into products that ship.
         </p>
-        <nav class="links" aria-label="Links">
-          <a href="https://github.com/karabogadev" rel="me noopener noreferrer" target="_blank">GitHub</a>
-          <a href="https://www.linkedin.com/in/karabogadev/" rel="me noopener noreferrer" target="_blank">LinkedIn</a>
-          <a href="https://x.com/karabogadev" rel="me noopener noreferrer" target="_blank">X</a>
-          <a href="mailto:cihat@karaboga.dev">Email</a>
-        </nav>
+        <p class="status" data-i18n="hero.status">Open to new work</p>
+        <div class="cta">
+          <a class="btn btn-primary" href="mailto:cihat@karaboga.dev" data-i18n="hero.cta1">Get in touch</a>
+          <a class="btn btn-ghost" href="https://github.com/karabogadev" rel="me noopener noreferrer" target="_blank">
+            GitHub
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M7 17 17 7M8 7h9v9"/>
+            </svg>
+          </a>
+        </div>
       </div>
     </section>
 
-    <!--
-      Add more sections below — they stack and auto-divide with a border:
-
-      <section class="section">
-        <div class="wrap">
-          <h2 class="section-title">Projects</h2>
-          ...
+    <!-- 01 — selected work -->
+    <section class="section" id="work" aria-labelledby="work-title">
+      <div class="wrap grid">
+        <div class="rail">
+          <span class="rail-num">01</span>
+          <h2 class="rail-label" id="work-title" data-i18n="work.title">Selected work</h2>
         </div>
-      </section>
-    -->
+        <div class="rows reveal">
+          <a class="row" href="https://github.com/karabogadev/flutter_app_boilerplate" rel="noopener noreferrer" target="_blank">
+            <div class="row-head">
+              <h3 class="row-title">flutter_app_boilerplate</h3>
+              <span class="row-meta">Dart · 2026</span>
+            </div>
+            <p class="row-desc" data-i18n="work.1.desc">
+              A production-ready Flutter starter: Clean Architecture, BLoC, offline-first
+              storage on Hive CE, auto_route, Dio and easy_localization.
+            </p>
+            <ul class="tags"><li>Flutter</li><li>BLoC</li><li>Hive CE</li><li>Dio</li></ul>
+            <svg class="row-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M7 17 17 7M8 7h9v9"/>
+            </svg>
+          </a>
+
+          <a class="row" href="https://github.com/karabogadev/traffic_racer" rel="noopener noreferrer" target="_blank">
+            <div class="row-head">
+              <h3 class="row-title">traffic_racer</h3>
+              <span class="row-meta">Dart · 2025</span>
+            </div>
+            <p class="row-desc" data-i18n="work.2.desc">
+              An endless traffic racing game built with Flutter on the Flame engine.
+            </p>
+            <ul class="tags"><li>Flutter</li><li>Flame</li><li>Game loop</li></ul>
+            <svg class="row-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M7 17 17 7M8 7h9v9"/>
+            </svg>
+          </a>
+
+          <a class="row" href="https://github.com/karabogadev/karaboga.dev" rel="noopener noreferrer" target="_blank">
+            <div class="row-head">
+              <h3 class="row-title">karaboga.dev</h3>
+              <span class="row-meta">HTML · 2026</span>
+            </div>
+            <p class="row-desc" data-i18n="work.3.desc">
+              This site. One static HTML file with inline CSS — no framework, no build step.
+            </p>
+            <ul class="tags"><li>HTML</li><li>CSS</li><li>a11y</li></ul>
+            <svg class="row-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M7 17 17 7M8 7h9v9"/>
+            </svg>
+          </a>
+
+          <a class="more" href="https://github.com/karabogadev?tab=repositories" rel="noopener noreferrer" target="_blank">
+            <span data-i18n="work.more">All repositories</span>
+            <span aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 02 — experience -->
+    <section class="section" id="experience" aria-labelledby="experience-title">
+      <div class="wrap grid">
+        <div class="rail">
+          <span class="rail-num">02</span>
+          <h2 class="rail-label" id="experience-title" data-i18n="xp.title">Experience</h2>
+        </div>
+        <div>
+          <article class="xp reveal" style="--i:0">
+            <div class="xp-when" data-i18n="xp.1.when">2025 — Present</div>
+            <div>
+              <h3 class="xp-role" data-i18n="xp.1.role">Mobile Developer</h3>
+              <div class="xp-org">Altur Teknoloji</div>
+              <p class="xp-desc" data-i18n="xp.1.desc">
+                Sole developer of Sağlıklı Sürüş — a Flutter app backed by a .NET service
+                and a Vue.js dashboard, with real-time driver heart-rate monitoring.
+                Owned the architecture from concept to launch.
+              </p>
+            </div>
+          </article>
+
+          <article class="xp reveal" style="--i:1">
+            <div class="xp-when" data-i18n="xp.2.when">2023 — 2024</div>
+            <div>
+              <h3 class="xp-role" data-i18n="xp.2.role">Mobile Developer</h3>
+              <div class="xp-org">Bookcars.com</div>
+              <p class="xp-desc" data-i18n="xp.2.desc">
+                One flavor-based Flutter codebase shipping to iOS, Android and Huawei,
+                with Strapi CMS, Stripe, Google Maps, push and App Clip / Instant App.
+                Booking time dropped under 30 seconds at 99.5% crash-free sessions,
+                released one-click through GitHub Actions.
+              </p>
+            </div>
+          </article>
+
+          <article class="xp reveal" style="--i:2">
+            <div class="xp-when" data-i18n="xp.3.when">2022 — 2024</div>
+            <div>
+              <h3 class="xp-role" data-i18n="xp.3.role">Mobile Developer</h3>
+              <div class="xp-org">Yolcu360</div>
+              <p class="xp-desc" data-i18n="xp.3.desc">
+                Push notifications, REST integrations and deep linking (Universal Links
+                &amp; App Links). A marketing-tool integration lifted daily active users
+                20% and revenue 15%, holding 99%+ crash-free sessions across 10k+ DAU.
+              </p>
+            </div>
+          </article>
+
+          <article class="xp reveal" style="--i:3">
+            <div class="xp-when" data-i18n="xp.4.when">2021 — 2022</div>
+            <div>
+              <h3 class="xp-role" data-i18n="xp.4.role">Jr. Mobile Developer</h3>
+              <div class="xp-org">KB Yazılım</div>
+              <p class="xp-desc" data-i18n="xp.4.desc">
+                Built two B2B Flutter apps for Dynobil Ekspertiz end to end — architecture
+                through store release — serving 5,000+ daily sessions at under 1% crash rate.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03 — stack -->
+    <section class="section" id="stack" aria-labelledby="stack-title">
+      <div class="wrap grid">
+        <div class="rail">
+          <span class="rail-num">03</span>
+          <h2 class="rail-label" id="stack-title" data-i18n="stack.title">Stack</h2>
+        </div>
+        <dl class="stack reveal">
+          <dt data-i18n="stack.1">Languages</dt>
+          <dd>Dart · Swift · Kotlin · Java · C# · JavaScript</dd>
+          <dt data-i18n="stack.2">Mobile</dt>
+          <dd>Flutter · iOS · Android · Huawei</dd>
+          <dt data-i18n="stack.3">State &amp; architecture</dt>
+          <dd>BLoC · Riverpod · Provider · GetX · MobX · Clean Architecture · MVVM</dd>
+          <dt data-i18n="stack.4">Backend &amp; data</dt>
+          <dd>Firebase · REST · Dio · Hive CE · Strapi · Stripe · .NET</dd>
+          <dt data-i18n="stack.5">Delivery</dt>
+          <dd>GitHub Actions · CI/CD · Unit testing · Git</dd>
+        </dl>
+      </div>
+    </section>
+
+    <!-- 04 — about -->
+    <section class="section" id="about" aria-labelledby="about-title">
+      <div class="wrap grid">
+        <div class="rail">
+          <span class="rail-num">04</span>
+          <h2 class="rail-label" id="about-title" data-i18n="about.title">About</h2>
+        </div>
+        <div class="prose reveal">
+          <p data-i18n="about.p1">
+            I'm a mobile engineer based in Istanbul. Since 2021 I've shipped cross-platform
+            apps across car rental, B2B vehicle inspection and driver safety — often as the
+            only mobile developer on the project, from architecture through store release.
+          </p>
+          <p data-i18n="about.p2">
+            What I care about is boring releases: apps that stay fast, don't crash, and go
+            out on a pipeline nobody has to babysit. I studied Software Engineering at
+            Fırat University (2018–2023).
+          </p>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer">
     <div class="wrap footer-inner">
-      <span>© 2026 Cihat Karaboğa</span>
-      <span>karaboga.dev</span>
+      <nav class="footer-links" aria-label="Elsewhere">
+        <a href="mailto:cihat@karaboga.dev">cihat@karaboga.dev</a>
+        <a href="https://github.com/karabogadev" rel="me noopener noreferrer" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/in/karabogadev/" rel="me noopener noreferrer" target="_blank">LinkedIn</a>
+        <a href="https://x.com/karabogadev" rel="me noopener noreferrer" target="_blank">X</a>
+      </nav>
+      <span class="footer-note" data-i18n="footer.note">© 2026 Cihat Karaboğa — one static file, no build step</span>
     </div>
   </footer>
 
   <script>
     (function () {
-      var btn = document.getElementById('theme-toggle');
       var html = document.documentElement;
-      var meta = document.getElementById('theme-color');
-      btn.addEventListener('click', function () {
+
+      /* ---------- theme ---------- */
+      var themeMeta = document.getElementById('theme-color');
+      document.getElementById('theme-toggle').addEventListener('click', function () {
         var next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
         html.setAttribute('data-theme', next);
         localStorage.setItem('theme', next);
-        if (meta) meta.content = next === 'dark' ? '#0e0e0d' : '#fbfbfa';
+        if (themeMeta) themeMeta.content = next === 'dark' ? '#0e0e0d' : '#fbfbfa';
       });
+
+      /* ---------- language ----------
+         The markup ships in English so crawlers index a complete English page;
+         Turkish is applied on top from this dictionary. Every value is plain
+         text set via textContent — no markup, no innerHTML. */
+      var STRINGS = {
+        tr: {
+          'meta.title': 'Cihat Karaboğa — Mobil Yazılım Mühendisi & Flutter Geliştirici',
+          'meta.desc': 'Cihat Karaboğa, İstanbul’da 5+ yıldır Flutter ve Dart ile hızlı ve güvenilir iOS ve Android uygulamaları geliştiren bir mobil yazılım mühendisi.',
+          'a11y.skip': 'İçeriğe geç',
+          'a11y.theme': 'Açık/koyu temayı değiştir',
+          'nav.work': 'İşler',
+          'nav.experience': 'Deneyim',
+          'nav.stack': 'Teknolojiler',
+          'nav.about': 'Hakkımda',
+          'hero.eyebrow': 'Mobil Yazılım Mühendisi · İstanbul, Türkiye',
+          'hero.lead': 'Flutter ve Dart ile iOS ve Android için hızlı, temiz mobil uygulamalar geliştiriyorum. 5+ yıldır fikirleri gerçekten yayına çıkan ürünlere dönüştürüyorum.',
+          'hero.status': 'Yeni projelere açığım',
+          'hero.cta1': 'İletişime geç',
+          'work.title': 'Seçili işler',
+          'work.1.desc': 'Üretime hazır bir Flutter başlangıç şablonu: Clean Architecture, BLoC, Hive CE ile offline-first depolama, auto_route, Dio ve easy_localization.',
+          'work.2.desc': 'Flame oyun motoru üzerinde Flutter ile yazılmış sonsuz trafik yarışı oyunu.',
+          'work.3.desc': 'Şu an baktığın site. Inline CSS’li tek statik HTML dosyası — framework yok, build adımı yok.',
+          'work.more': 'Tüm repolar',
+          'xp.title': 'Deneyim',
+          'xp.1.when': '2025 — Halen',
+          'xp.1.role': 'Mobil Geliştirici',
+          'xp.1.desc': 'Sağlıklı Sürüş’ün tek geliştiricisi — .NET servisi ve Vue.js paneliyle çalışan, sürücünün kalp atışını gerçek zamanlı izleyen bir Flutter uygulaması. Mimarisini fikirden yayına kadar üstlendim.',
+          'xp.2.when': '2023 — 2024',
+          'xp.2.role': 'Mobil Geliştirici',
+          'xp.2.desc': 'Tek flavor tabanlı Flutter kod tabanından iOS, Android ve Huawei’ye çıkan uygulama; Strapi CMS, Stripe, Google Maps, push ve App Clip / Instant App entegrasyonlarıyla. Rezervasyon süresi %99,5 crash-free oturumla birlikte 30 saniyenin altına indi; sürümler GitHub Actions üzerinden tek tıkla çıktı.',
+          'xp.3.when': '2022 — 2024',
+          'xp.3.role': 'Mobil Geliştirici',
+          'xp.3.desc': 'Push bildirimleri, REST entegrasyonları ve deep linking (Universal Links & App Links). Bir pazarlama aracı entegrasyonu günlük aktif kullanıcıyı %20, geliri %15 artırdı; 10 binin üzerinde DAU’da %99+ crash-free oturum korundu.',
+          'xp.4.when': '2021 — 2022',
+          'xp.4.role': 'Jr. Mobil Geliştirici',
+          'xp.4.desc': 'Dynobil Ekspertiz için iki B2B Flutter uygulamasını mimariden mağaza yayınına kadar baştan sona geliştirdim; günlük 5.000+ oturumda %1’in altında çökme oranı.',
+          'stack.title': 'Teknolojiler',
+          'stack.1': 'Diller',
+          'stack.2': 'Mobil',
+          'stack.3': 'State & mimari',
+          'stack.4': 'Backend & veri',
+          'stack.5': 'Sürüm & test',
+          'about.title': 'Hakkımda',
+          'about.p1': 'İstanbul’da çalışan bir mobil mühendisim. 2021’den beri araç kiralama, B2B ekspertiz ve sürücü güvenliği alanlarında cross-platform uygulamalar yayınladım — çoğu zaman projenin tek mobil geliştiricisi olarak, mimariden mağaza yayınına kadar.',
+          'about.p2': 'Önemsediğim şey sıkıcı sürümler: hızlı kalan, çökmeyen ve kimsenin başında beklemek zorunda olmadığı bir pipeline’dan çıkan uygulamalar. Fırat Üniversitesi’nde Yazılım Mühendisliği okudum (2018–2023).',
+          'footer.note': '© 2026 Cihat Karaboğa — tek statik dosya, build adımı yok'
+        }
+      };
+
+      var nodes = document.querySelectorAll('[data-i18n]');
+      var labelled = document.querySelectorAll('[data-i18n-label]');
+      var descMeta = document.getElementById('meta-description');
+      var buttons = document.querySelectorAll('[data-lang-btn]');
+
+      // snapshot the English markup so switching back needs no second dictionary
+      STRINGS.en = {};
+      nodes.forEach(function (el) {
+        STRINGS.en[el.getAttribute('data-i18n')] = el.textContent.trim().replace(/\s+/g, ' ');
+      });
+      labelled.forEach(function (el) {
+        STRINGS.en[el.getAttribute('data-i18n-label')] = el.getAttribute('aria-label');
+      });
+      STRINGS.en['meta.title'] = document.title;
+      STRINGS.en['meta.desc'] = descMeta ? descMeta.content : '';
+
+      function applyLang(lang) {
+        var dict = STRINGS[lang] || STRINGS.en;
+        html.setAttribute('lang', lang);
+        html.setAttribute('data-lang', lang);
+
+        nodes.forEach(function (el) {
+          var v = dict[el.getAttribute('data-i18n')];
+          if (v != null) el.textContent = v;
+        });
+        labelled.forEach(function (el) {
+          var v = dict[el.getAttribute('data-i18n-label')];
+          if (v != null) el.setAttribute('aria-label', v);
+        });
+        if (dict['meta.title']) document.title = dict['meta.title'];
+        if (descMeta && dict['meta.desc']) descMeta.content = dict['meta.desc'];
+
+        buttons.forEach(function (b) {
+          b.setAttribute('aria-pressed', String(b.getAttribute('data-lang-btn') === lang));
+        });
+
+        // keep the URL shareable without adding a history entry
+        var url = new URL(location.href);
+        if (lang === 'tr') url.searchParams.set('lang', 'tr');
+        else url.searchParams.delete('lang');
+        history.replaceState(null, '', url.pathname + url.search + url.hash);
+      }
+
+      buttons.forEach(function (b) {
+        b.addEventListener('click', function () {
+          var lang = b.getAttribute('data-lang-btn');
+          localStorage.setItem('lang', lang);
+          applyLang(lang);
+        });
+      });
+
+      applyLang(html.getAttribute('data-lang') || 'en');
+
+      /* ---------- scroll reveal ---------- */
+      var reveals = document.querySelectorAll('.reveal');
+      if (!window.IntersectionObserver ||
+          window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        reveals.forEach(function (el) { el.classList.add('is-visible') });
+      } else {
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) {
+            if (!e.isIntersecting) return;
+            e.target.classList.add('is-visible');
+            io.unobserve(e.target);
+          });
+        }, { rootMargin: '0px 0px -5% 0px', threshold: 0 });
+        reveals.forEach(function (el) { io.observe(el) });
+
+        // Safety net: the reveal is decoration, but the content it hides is the
+        // whole point of the page. If the observer never fires — a preview bot,
+        // a renderer that produces no frames — show everything anyway.
+        setTimeout(function () {
+          reveals.forEach(function (el) { el.classList.add('is-visible') });
+        }, 2500);
+      }
     })();
   </script>
 </body>

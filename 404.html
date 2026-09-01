@@ -1,84 +1,190 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>404 — Page not found · Cihat Karaboğa</title>
   <meta name="robots" content="noindex, follow">
-  <meta name="theme-color" content="#0a0a0b">
-  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" id="theme-color" content="#0e0e0d">
   <link rel="icon" href="/favicon.ico" sizes="48x48">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;800&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap">
+
+  <!-- same pre-paint theme + language resolution as the home page -->
+  <script>
+    (function () {
+      var d = document.documentElement;
+      var stored = localStorage.getItem('theme');
+      var theme = stored || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      d.setAttribute('data-theme', theme);
+      var meta = document.getElementById('theme-color');
+      if (meta) meta.content = theme === 'dark' ? '#0e0e0d' : '#fbfbfa';
+
+      var param = new URLSearchParams(location.search).get('lang');
+      var lang = (param === 'tr' || param === 'en') ? param
+        : localStorage.getItem('lang')
+        || ((navigator.language || 'en').toLowerCase().indexOf('tr') === 0 ? 'tr' : 'en');
+      d.setAttribute('data-lang', lang);
+    })();
+  </script>
+
   <style>
-    *,*::before,*::after{box-sizing:border-box}
-    *{margin:0}
-    :root{
-      --bg:#0a0a0b;--ink:#f3f1ed;--ink-dim:#a4a09a;--ink-mute:#6a6760;
-      --ember:#ff5a2c;--ember-bright:#ff7a52;--ember-soft:rgba(255,90,44,.14);
-      --line-2:rgba(243,241,237,.17);
-      --font:"Geist",-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,Roboto,"Helvetica Neue",Arial,sans-serif;
-      --mono:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,monospace;
-      --ease:cubic-bezier(.22,.61,.36,1);
+    *,*::before,*::after { box-sizing: border-box; margin: 0 }
+
+    :root {
+      --font: "Geist", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, Roboto, "Helvetica Neue", Arial, sans-serif;
+      --mono: "Geist Mono", ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+      --radius: .55rem;
+      --transition: .18s ease;
+      --ease: cubic-bezier(.22,.61,.36,1);
     }
-    html{-webkit-text-size-adjust:100%}
-    body{
-      font-family:var(--font);background:var(--bg);color:var(--ink);
-      min-height:100vh;display:flex;align-items:center;justify-content:center;
-      text-align:center;padding:2rem;-webkit-font-smoothing:antialiased;
-      text-rendering:optimizeLegibility;letter-spacing:-.011em;
-      position:relative;overflow:hidden;
+
+    [data-theme="light"] {
+      --bg: #fbfbfa;
+      --ink: #16150f;
+      --ink-2: #5f5c56;
+      --ink-3: #74716c;
+      --border-2: rgba(22,21,15,.22);
+      --accent: #e0481f;
+      --accent-ink: #c23d18;
+      --accent-soft: rgba(224,72,31,.09);
+      --on-accent: #fff7f3;
+      color-scheme: light;
     }
-    body::before{
-      content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
-      background:radial-gradient(46rem 32rem at 50% -12%,rgba(255,90,44,.16),transparent 68%);
+
+    [data-theme="dark"] {
+      --bg: #0e0e0d;
+      --ink: #f5f5f4;
+      --ink-2: #a3a09a;
+      --ink-3: #8b8880;
+      --border-2: rgba(255,255,255,.2);
+      --accent: #ff6a3d;
+      --accent-ink: #ff6a3d;
+      --accent-soft: rgba(255,106,61,.13);
+      --on-accent: #1a0a04;
+      color-scheme: dark;
     }
-    .wrap{max-width:32rem;animation:rise .6s var(--ease) backwards}
-    .mark{
-      width:5.5rem;height:5.5rem;color:var(--ember);margin:0 auto 2rem;opacity:.92;
-      filter:drop-shadow(0 .4rem 1.6rem rgba(255,90,44,.32));
-      animation:float 4s ease-in-out infinite;
+
+    html { -webkit-text-size-adjust: 100% }
+
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--ink);
+      min-height: 100dvh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+      letter-spacing: -.011em;
+      line-height: 1.65;
     }
-    .code{font-size:clamp(4rem,16vw,7rem);font-weight:800;letter-spacing:-.045em;line-height:1}
-    h1{font-size:clamp(1.1rem,3.5vw,1.4rem);font-weight:600;margin:.8rem 0 .6rem;letter-spacing:-.02em}
-    p{color:var(--ink-dim);font-size:1rem;margin-bottom:2rem;text-wrap:pretty}
-    .home{
-      display:inline-flex;align-items:center;gap:.5rem;font-weight:600;font-size:.95rem;
-      padding:.72rem 1.35rem;border-radius:.6rem;text-decoration:none;
-      background:var(--ember);color:#180a04;
-      box-shadow:0 .5rem 1.4rem -.4rem rgba(255,90,44,.5);
-      transition:background .18s var(--ease),transform .18s var(--ease),box-shadow .18s var(--ease);
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      background: radial-gradient(44rem 30rem at 50% -10%, var(--accent-soft), transparent 70%);
     }
-    .home:hover{
-      background:var(--ember-bright);transform:translateY(-2px);
-      box-shadow:0 .8rem 1.8rem -.4rem rgba(255,90,44,.6);
+
+    .wrap {
+      max-width: 30rem;
+      text-align: center;
+      animation: rise .6s var(--ease) backwards;
     }
-    .home:active{transform:translateY(0) scale(.97)}
-    .domain{margin-top:2.4rem;font-family:var(--mono);font-size:.78rem;
-      color:var(--ink-mute);letter-spacing:.06em}
-    :focus-visible{outline:2px solid var(--ember);outline-offset:3px;border-radius:3px}
-    @keyframes rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
-    @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
-    @media (prefers-reduced-motion:reduce){
-      *,*::before,*::after{animation:none!important;transition:none!important}
+    .mark {
+      width: 3.75rem; height: 3.75rem;
+      margin: 0 auto 2rem;
+      border-radius: 1rem;
+      display: block;
+      box-shadow: 0 .5rem 1.6rem -.5rem rgba(0,0,0,.55);
+    }
+    .code {
+      font-family: var(--mono);
+      font-size: clamp(3.25rem, 13vw, 5rem);
+      font-weight: 500;
+      letter-spacing: -.04em;
+      line-height: 1;
+      color: var(--accent-ink);
+    }
+    h1 {
+      font-size: clamp(1.1rem, 3.5vw, 1.3rem);
+      font-weight: 600;
+      letter-spacing: -.022em;
+      margin: 1rem 0 .5rem;
+      text-wrap: balance;
+    }
+    p { color: var(--ink-2); margin-bottom: 2rem; text-wrap: pretty }
+
+    .home {
+      display: inline-flex;
+      align-items: center;
+      gap: .45rem;
+      font-size: .875rem;
+      font-weight: 500;
+      padding: .62rem 1.1rem;
+      border-radius: var(--radius);
+      text-decoration: none;
+      background: var(--accent);
+      color: var(--on-accent);
+      transition: filter var(--transition), transform var(--transition);
+    }
+    .home:hover { filter: brightness(1.08); transform: translateY(-1px) }
+    .home:active { transform: translateY(0) scale(.98) }
+    .home svg { width: .9rem; height: .9rem }
+
+    .domain {
+      margin-top: 2.5rem;
+      font-family: var(--mono);
+      font-size: .75rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--ink-3);
+    }
+
+    :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 3px }
+    @keyframes rise { from { opacity: 0; transform: translateY(12px) } to { opacity: 1; transform: none } }
+    @media (prefers-reduced-motion: reduce) {
+      *,*::before,*::after { animation: none !important; transition: none !important }
     }
   </style>
 </head>
 <body>
   <div class="wrap">
-    <svg class="mark" viewBox="0 0 100 100" aria-hidden="true" fill="currentColor">
-      <path d="M13 24Q50 60 87 24Q50 80 13 24Z"/>
-      <path d="M32 47Q50 42 68 47Q71 62 62 79Q50 87 38 79Q29 62 32 47Z"/>
-      <path d="M33 52Q21 52 20 63Q29 63 37 57Z"/>
-      <path d="M67 52Q79 52 80 63Q71 63 63 57Z"/>
-    </svg>
+    <img class="mark" src="/favicon.svg" alt="" width="60" height="60">
     <div class="code">404</div>
-    <h1>This page wandered off.</h1>
-    <p>The link is broken or the page no longer exists.</p>
-    <a class="home" href="/">Back to karaboga.dev</a>
+    <h1 data-i18n="title">This page wandered off.</h1>
+    <p data-i18n="body">The link is broken, or the page no longer exists.</p>
+    <a class="home" href="/">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M19 12H5M11 18l-6-6 6-6"/>
+      </svg>
+      <span data-i18n="home">Back to karaboga.dev</span>
+    </a>
     <div class="domain">karaboga.dev</div>
   </div>
+
+  <script>
+    (function () {
+      var html = document.documentElement;
+      var TR = {
+        'title': 'Bu sayfa kaybolmuş.',
+        'body': 'Bağlantı bozuk ya da sayfa artık mevcut değil.',
+        'home': 'karaboga.dev’e dön'
+      };
+      if (html.getAttribute('data-lang') !== 'tr') return;
+      html.setAttribute('lang', 'tr');
+      document.title = '404 — Sayfa bulunamadı · Cihat Karaboğa';
+      document.querySelectorAll('[data-i18n]').forEach(function (el) {
+        var v = TR[el.getAttribute('data-i18n')];
+        if (v != null) el.textContent = v;
+      });
+    })();
+  </script>
 </body>
 </html>

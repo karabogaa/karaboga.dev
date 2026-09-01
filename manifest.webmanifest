@@ -1,7 +1,7 @@
 {
   "name": "Cihat Karaboğa — Mobile Software Engineer",
   "short_name": "Karaboğa",
-  "description": "Cihat Karaboğa — mobile software engineer in Türkiye building iOS and Android apps with Flutter and Dart.",
+  "description": "Cihat Karaboğa — mobile software engineer in Istanbul building iOS and Android apps with Flutter and Dart.",
   "lang": "en",
   "id": "/",
   "start_url": "/",
@@ -10,8 +10,20 @@
   "background_color": "#0e0e0d",
   "theme_color": "#0e0e0d",
   "icons": [
-    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png" },
-    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png" },
-    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml" }
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
   ]
 }

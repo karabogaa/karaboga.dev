@@ -2,10 +2,30 @@
 
 Personal site of **Cihat Karaboğa** — mobile software engineer, Türkiye.
 
-A single static page. `index.html` is self-contained — inline CSS and a tiny
-inline theme script, no build step. Built for speed and SEO with semantic HTML,
+A single static page. `index.html` is self-contained — inline CSS and a small
+inline script, no build step. Built for speed and SEO with semantic HTML,
 Open Graph + Twitter cards, JSON-LD structured data, a sitemap and a manifest.
-The UI uses the Geist webfont (Google Fonts) with a system-font fallback.
+Type is Geist and Geist Mono (Google Fonts) with system-font fallbacks.
+
+Sections: hero, selected work, experience, stack, about.
+
+## Themes and language
+
+Light/dark follows the system preference and is overridable from the header;
+the choice is stored in `localStorage` and applied before first paint.
+
+The page ships in English so crawlers index a complete English document.
+Turkish is applied on top from an inline dictionary keyed by `data-i18n`
+attributes — every value is plain text set through `textContent`. Language
+resolution order is `?lang=` → `localStorage` → `navigator.language` → English,
+and switching rewrites `?lang=` so a Turkish link is shareable. There is no
+`hreflang`: both languages live at the same URL, so advertising them as
+alternates would be a duplicate signal rather than a useful one. Separate
+`/tr/` pages would be the fix if real bilingual SEO is ever needed.
+
+To add or change a string, add the `data-i18n` attribute to the element and the
+matching key to the `STRINGS.tr` object — the English side is snapshotted from
+the markup at load, so it never needs a second dictionary.
 
 ## Develop locally
 

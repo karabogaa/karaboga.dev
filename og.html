@@ -6,7 +6,7 @@
   <title>og</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box }
     html, body { width: 1200px; height: 630px }
@@ -23,19 +23,38 @@
       position: relative;
       overflow: hidden;
     }
+    /* same ambient glow the site uses behind its hero */
+    body::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(700px 480px at 50% -14%, rgba(255,106,61,.16), transparent 70%);
+    }
     .brand {
       position: absolute;
-      top: 62px;
+      top: 58px;
       left: 90px;
-      font-size: 25px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 24px;
       font-weight: 600;
       letter-spacing: -.02em;
     }
-    .label {
-      font-size: 23px;
-      font-weight: 500;
-      color: #8d8a83;
-      margin-bottom: 22px;
+    .brand::before {
+      content: "";
+      width: 9px; height: 9px;
+      border-radius: 50%;
+      background: #ff6a3d;
+      box-shadow: 0 0 12px #ff6a3d;
+    }
+    .eyebrow {
+      font-family: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 19px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: #8b8880;
+      margin-bottom: 26px;
     }
     h1 {
       font-size: 116px;
@@ -44,36 +63,34 @@
       line-height: 1;
     }
     .tech {
-      font-size: 31px;
-      font-weight: 400;
-      color: #8d8a83;
+      font-size: 30px;
+      color: #a3a09a;
       letter-spacing: -.015em;
-      margin-top: 32px;
+      margin-top: 30px;
     }
     .foot {
       position: absolute;
       left: 90px;
       right: 90px;
-      bottom: 56px;
+      bottom: 54px;
       display: flex;
       justify-content: space-between;
       align-items: baseline;
-      font-size: 21px;
-      font-weight: 400;
-      color: #8d8a83;
-      letter-spacing: -.01em;
-      border-top: 1px solid rgba(255,255,255,.14);
+      font-family: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 19px;
+      color: #8b8880;
+      border-top: 1px solid rgba(255,255,255,.11);
       padding-top: 24px;
     }
   </style>
 </head>
 <body>
   <div class="brand">karaboga.dev</div>
-  <div class="label">Mobile Software Engineer</div>
+  <div class="eyebrow">Mobile Software Engineer · Istanbul</div>
   <h1>Cihat Karaboğa</h1>
   <div class="tech">Flutter &amp; Dart · iOS &amp; Android apps</div>
   <div class="foot">
-    <span>5+ years building iOS &amp; Android apps</span>
+    <span>5+ years shipping mobile products</span>
     <span>cihat@karaboga.dev</span>
   </div>
 </body>

@@ -9,4 +9,4 @@ COPY index.html 404.html manifest.webmanifest robots.txt sitemap.xml \
      icon-192.png icon-512.png og.png \
      /usr/share/nginx/html/
 
-EXPOSE 80
+EXPOSE 3000

@@ -5,9 +5,13 @@ Personal site of **Cihat Karaboğa** — mobile software engineer, Türkiye.
 A single static page. `index.html` is self-contained — inline CSS and a small
 inline script, no build step. Built for speed and SEO with semantic HTML,
 Open Graph + Twitter cards, JSON-LD structured data, a sitemap and a manifest.
-Type is Geist and Geist Mono (Google Fonts) with system-font fallbacks.
+Type is Manrope (Google Fonts) with system-font fallbacks; system monospace is
+used only for the code illustration. The design system is documented in `DESIGN.md`.
 
-Sections: hero, selected work, experience, stack, about.
+Sections: introduction with an interactive device study, illustrated selected work,
+experience timeline, about, stack, and contact. Navigation stays visible on mobile.
+The device and project visuals are lightweight HTML/CSS illustrations, not product
+screenshots. The device study uses sample data.
 
 ## Themes and language
 
@@ -22,6 +26,12 @@ and switching rewrites `?lang=` so a Turkish link is shareable. There is no
 `hreflang`: both languages live at the same URL, so advertising them as
 alternates would be a duplicate signal rather than a useful one. Separate
 `/tr/` pages would be the fix if real bilingual SEO is ever needed.
+
+Storage failures do not prevent the page from loading. Without JavaScript, all
+content and navigation remain available; enhancement controls stay hidden. Email
+copying works independently for `cihat@karaboga.dev` and
+`cihattkaraboga@gmail.com`. It announces success, or selects the address when clipboard
+access is unavailable. Reduced-motion preferences disable animation.
 
 To add or change a string, add the `data-i18n` attribute to the element and the
 matching key to the `STRINGS.tr` object — the English side is snapshotted from
@@ -42,7 +52,7 @@ python3 -m http.server 8080
 
 ```bash
 docker build -t karaboga-dev .
-docker run --rm -p 8080:80 karaboga-dev
+docker run --rm -p 8080:3000 karaboga-dev
 ```
 
 `nginx.conf` adds gzip, long-cache headers for static assets, and wires up the
@@ -57,6 +67,7 @@ custom domain to `karaboga.dev` (this adds a `CNAME` file).
 
 | File | Purpose |
 |------|---------|
+| `DESIGN.md` | Visual system and interaction principles |
 | `index.html` | The page — markup, inline CSS, SEO metadata, JSON-LD |
 | `404.html` | Themed not-found page |
 | `og.png` | 1200×630 social share image |
@@ -65,6 +76,7 @@ custom domain to `karaboga.dev` (this adds a `CNAME` file).
 | `robots.txt`, `sitemap.xml` | Crawler directives |
 | `nginx.conf`, `Dockerfile` | Container deployment |
 | `og.html` | Build source for `og.png` — not deployed |
+| `logo-concept.png` | Generated logo exploration — not deployed in Docker |
 
 ## Regenerate the OG image
 

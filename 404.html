@@ -1,190 +1,259 @@
 <!doctype html>
 <html lang="en" data-theme="dark">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>404 — Page not found · Cihat Karaboğa</title>
-  <meta name="robots" content="noindex, follow">
-  <meta name="theme-color" id="theme-color" content="#0e0e0d">
-  <link rel="icon" href="/favicon.ico" sizes="48x48">
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>404 — Page not found · Cihat Karaboğa</title>
+    <meta name="robots" content="noindex, follow" />
+    <meta name="theme-color" id="theme-color" content="#101522" />
+    <link rel="icon" href="/favicon.ico" sizes="48x48" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+    />
 
-  <!-- same pre-paint theme + language resolution as the home page -->
-  <script>
-    (function () {
-      var d = document.documentElement;
-      var stored = localStorage.getItem('theme');
-      var theme = stored || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-      d.setAttribute('data-theme', theme);
-      var meta = document.getElementById('theme-color');
-      if (meta) meta.content = theme === 'dark' ? '#0e0e0d' : '#fbfbfa';
+    <!-- same pre-paint theme + language resolution as the home page -->
+    <script>
+      (function () {
+        var d = document.documentElement;
+        var read = function (key) {
+          try {
+            return localStorage.getItem(key);
+          } catch (_) {
+            return null;
+          }
+        };
+        var stored = read("theme");
+        var theme =
+          stored === "dark" || stored === "light"
+            ? stored
+            : window.matchMedia("(prefers-color-scheme: dark)").matches
+              ? "dark"
+              : "light";
+        d.setAttribute("data-theme", theme);
+        var meta = document.getElementById("theme-color");
+        if (meta) meta.content = theme === "dark" ? "#101522" : "#f7f8fc";
 
-      var param = new URLSearchParams(location.search).get('lang');
-      var lang = (param === 'tr' || param === 'en') ? param
-        : localStorage.getItem('lang')
-        || ((navigator.language || 'en').toLowerCase().indexOf('tr') === 0 ? 'tr' : 'en');
-      d.setAttribute('data-lang', lang);
-    })();
-  </script>
+        var param = new URLSearchParams(location.search).get("lang");
+        var lang =
+          param === "tr" || param === "en"
+            ? param
+            : ((read("lang") === "tr" || read("lang") === "en") &&
+                read("lang")) ||
+              ((navigator.language || "en").toLowerCase().indexOf("tr") === 0
+                ? "tr"
+                : "en");
+        d.setAttribute("data-lang", lang);
+      })();
+    </script>
 
-  <style>
-    *,*::before,*::after { box-sizing: border-box; margin: 0 }
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+      }
 
-    :root {
-      --font: "Geist", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, Roboto, "Helvetica Neue", Arial, sans-serif;
-      --mono: "Geist Mono", ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
-      --radius: .55rem;
-      --transition: .18s ease;
-      --ease: cubic-bezier(.22,.61,.36,1);
-    }
+      :root {
+        --font:
+          "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui,
+          Roboto, "Helvetica Neue", Arial, sans-serif;
+        --mono:
+          ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+        --radius: 0.55rem;
+        --transition: 0.18s ease;
+        --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+      }
 
-    [data-theme="light"] {
-      --bg: #fbfbfa;
-      --ink: #16150f;
-      --ink-2: #5f5c56;
-      --ink-3: #74716c;
-      --border-2: rgba(22,21,15,.22);
-      --accent: #e0481f;
-      --accent-ink: #c23d18;
-      --accent-soft: rgba(224,72,31,.09);
-      --on-accent: #fff7f3;
-      color-scheme: light;
-    }
+      [data-theme="light"] {
+        --bg: #f7f8fc;
+        --ink: #192238;
+        --ink-2: #576176;
+        --ink-3: #626d83;
+        --border-2: rgba(22, 21, 15, 0.22);
+        --accent: #3659db;
+        --accent-ink: #3659db;
+        --accent-soft: #e9edff;
+        --on-accent: #ffffff;
+        color-scheme: light;
+      }
 
-    [data-theme="dark"] {
-      --bg: #0e0e0d;
-      --ink: #f5f5f4;
-      --ink-2: #a3a09a;
-      --ink-3: #8b8880;
-      --border-2: rgba(255,255,255,.2);
-      --accent: #ff6a3d;
-      --accent-ink: #ff6a3d;
-      --accent-soft: rgba(255,106,61,.13);
-      --on-accent: #1a0a04;
-      color-scheme: dark;
-    }
+      [data-theme="dark"] {
+        --bg: #101522;
+        --ink: #edf0fa;
+        --ink-2: #aab4ca;
+        --ink-3: #a1adc4;
+        --border-2: rgba(255, 255, 255, 0.2);
+        --accent: #a9b9ff;
+        --accent-ink: #a9b9ff;
+        --accent-soft: #242f50;
+        --on-accent: #101522;
+        color-scheme: dark;
+      }
 
-    html { -webkit-text-size-adjust: 100% }
+      html {
+        -webkit-text-size-adjust: 100%;
+      }
 
-    body {
-      font-family: var(--font);
-      background: var(--bg);
-      color: var(--ink);
-      min-height: 100dvh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 2rem;
-      -webkit-font-smoothing: antialiased;
-      text-rendering: optimizeLegibility;
-      letter-spacing: -.011em;
-      line-height: 1.65;
-    }
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      z-index: -1;
-      pointer-events: none;
-      background: radial-gradient(44rem 30rem at 50% -10%, var(--accent-soft), transparent 70%);
-    }
+      body {
+        font-family: var(--font);
+        background: var(--bg);
+        color: var(--ink);
+        min-height: 100dvh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem;
+        -webkit-font-smoothing: antialiased;
+        text-rendering: optimizeLegibility;
+        letter-spacing: -0.011em;
+        line-height: 1.65;
+      }
 
-    .wrap {
-      max-width: 30rem;
-      text-align: center;
-      animation: rise .6s var(--ease) backwards;
-    }
-    .mark {
-      width: 3.75rem; height: 3.75rem;
-      margin: 0 auto 2rem;
-      border-radius: 1rem;
-      display: block;
-      box-shadow: 0 .5rem 1.6rem -.5rem rgba(0,0,0,.55);
-    }
-    .code {
-      font-family: var(--mono);
-      font-size: clamp(3.25rem, 13vw, 5rem);
-      font-weight: 500;
-      letter-spacing: -.04em;
-      line-height: 1;
-      color: var(--accent-ink);
-    }
-    h1 {
-      font-size: clamp(1.1rem, 3.5vw, 1.3rem);
-      font-weight: 600;
-      letter-spacing: -.022em;
-      margin: 1rem 0 .5rem;
-      text-wrap: balance;
-    }
-    p { color: var(--ink-2); margin-bottom: 2rem; text-wrap: pretty }
+      .wrap {
+        width: 100%;
+        max-width: 34rem;
+        padding: clamp(1.5rem, 5vw, 3rem);
+        border: 1px solid var(--border-2);
+        border-radius: 24px;
+        text-align: center;
+        animation: rise 0.6s var(--ease) backwards;
+      }
+      .mark {
+        width: 3.75rem;
+        height: 3.75rem;
+        margin: 0 auto 2rem;
+        border-radius: 1rem;
+        display: block;
+        box-shadow: 0 0.5rem 1.6rem -0.5rem rgba(0, 0, 0, 0.55);
+      }
+      .code {
+        font-family: var(--mono);
+        font-family: var(--font);
+        font-size: clamp(5rem, 18vw, 8rem);
+        font-weight: 800;
+        font-weight: 500;
+        letter-spacing: -0.04em;
+        line-height: 1;
+        color: var(--accent-ink);
+      }
+      h1 {
+        font-size: clamp(1.1rem, 3.5vw, 1.3rem);
+        font-weight: 600;
+        letter-spacing: -0.022em;
+        margin: 1rem 0 0.5rem;
+        text-wrap: balance;
+      }
+      p {
+        color: var(--ink-2);
+        margin-bottom: 2rem;
+        text-wrap: pretty;
+      }
 
-    .home {
-      display: inline-flex;
-      align-items: center;
-      gap: .45rem;
-      font-size: .875rem;
-      font-weight: 500;
-      padding: .62rem 1.1rem;
-      border-radius: var(--radius);
-      text-decoration: none;
-      background: var(--accent);
-      color: var(--on-accent);
-      transition: filter var(--transition), transform var(--transition);
-    }
-    .home:hover { filter: brightness(1.08); transform: translateY(-1px) }
-    .home:active { transform: translateY(0) scale(.98) }
-    .home svg { width: .9rem; height: .9rem }
+      .home {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.45rem;
+        font-size: 0.875rem;
+        font-weight: 500;
+        padding: 0.62rem 1.1rem;
+        border-radius: var(--radius);
+        text-decoration: none;
+        background: var(--accent);
+        color: var(--on-accent);
+        transition:
+          filter var(--transition),
+          transform var(--transition);
+      }
+      .home:hover {
+        filter: brightness(1.08);
+        transform: translateY(-1px);
+      }
+      .home:active {
+        transform: translateY(0) scale(0.98);
+      }
+      .home svg {
+        width: 0.9rem;
+        height: 0.9rem;
+      }
 
-    .domain {
-      margin-top: 2.5rem;
-      font-family: var(--mono);
-      font-size: .75rem;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-      color: var(--ink-3);
-    }
+      .domain {
+        margin-top: 2.5rem;
+        font-family: var(--mono);
+        font-size: 0.75rem;
+        letter-spacing: 0;
+        color: var(--ink-3);
+      }
 
-    :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 3px }
-    @keyframes rise { from { opacity: 0; transform: translateY(12px) } to { opacity: 1; transform: none } }
-    @media (prefers-reduced-motion: reduce) {
-      *,*::before,*::after { animation: none !important; transition: none !important }
-    }
-  </style>
-</head>
-<body>
-  <div class="wrap">
-    <img class="mark" src="/favicon.svg" alt="" width="60" height="60">
-    <div class="code">404</div>
-    <h1 data-i18n="title">This page wandered off.</h1>
-    <p data-i18n="body">The link is broken, or the page no longer exists.</p>
-    <a class="home" href="/">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <path d="M19 12H5M11 18l-6-6 6-6"/>
-      </svg>
-      <span data-i18n="home">Back to karaboga.dev</span>
-    </a>
-    <div class="domain">karaboga.dev</div>
-  </div>
+      :focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 3px;
+        border-radius: 3px;
+      }
+      @keyframes rise {
+        from {
+          opacity: 0;
+          transform: translateY(12px);
+        }
+        to {
+          opacity: 1;
+          transform: none;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          animation: none !important;
+          transition: none !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <img class="mark" src="/favicon.svg" alt="" width="60" height="60" />
+      <div class="code">404</div>
+      <h1 data-i18n="title">This page wandered off.</h1>
+      <p data-i18n="body">The link is broken, or the page no longer exists.</p>
+      <a class="home" href="/">
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <path d="M19 12H5M11 18l-6-6 6-6" />
+        </svg>
+        <span data-i18n="home">Back to karaboga.dev</span>
+      </a>
+      <div class="domain">karaboga.dev</div>
+    </div>
 
-  <script>
-    (function () {
-      var html = document.documentElement;
-      var TR = {
-        'title': 'Bu sayfa kaybolmuş.',
-        'body': 'Bağlantı bozuk ya da sayfa artık mevcut değil.',
-        'home': 'karaboga.dev’e dön'
-      };
-      if (html.getAttribute('data-lang') !== 'tr') return;
-      html.setAttribute('lang', 'tr');
-      document.title = '404 — Sayfa bulunamadı · Cihat Karaboğa';
-      document.querySelectorAll('[data-i18n]').forEach(function (el) {
-        var v = TR[el.getAttribute('data-i18n')];
-        if (v != null) el.textContent = v;
-      });
-    })();
-  </script>
-</body>
+    <script>
+      (function () {
+        var html = document.documentElement;
+        var TR = {
+          title: "Bu sayfa kaybolmuş.",
+          body: "Bağlantı bozuk ya da sayfa artık mevcut değil.",
+          home: "karaboga.dev’e dön",
+        };
+        if (html.getAttribute("data-lang") !== "tr") return;
+        html.setAttribute("lang", "tr");
+        document.querySelector(".home").href = "/?lang=tr";
+        document.title = "404 — Sayfa bulunamadı · Cihat Karaboğa";
+        document.querySelectorAll("[data-i18n]").forEach(function (el) {
+          var v = TR[el.getAttribute("data-i18n")];
+          if (v != null) el.textContent = v;
+        });
+      })();
+    </script>
+  </body>
 </html>

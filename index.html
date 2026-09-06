@@ -1,1036 +1,2971 @@
 <!doctype html>
 <html lang="en" data-theme="dark">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>Cihat Karaboğa — Mobile Software Engineer &amp; Flutter Developer</title>
-  <meta name="description" id="meta-description" content="Cihat Karaboğa is a mobile software engineer in Istanbul with 5+ years building fast, reliable iOS and Android apps in Flutter and Dart.">
-  <meta name="author" content="Cihat Karaboğa">
-  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
-  <link rel="canonical" href="https://karaboga.dev/">
-  <meta name="theme-color" id="theme-color" content="#0e0e0d">
+    <title>
+      Cihat Karaboğa — Mobile Software Engineer &amp; Flutter Developer
+    </title>
+    <meta
+      name="description"
+      id="meta-description"
+      content="Cihat Karaboğa is a mobile software engineer in Istanbul with 5+ years building fast, reliable iOS and Android apps in Flutter and Dart."
+    />
+    <meta name="author" content="Cihat Karaboğa" />
+    <meta
+      name="robots"
+      content="index, follow, max-image-preview:large, max-snippet:-1"
+    />
+    <link rel="canonical" href="https://karaboga.dev/" />
+    <meta name="theme-color" id="theme-color" content="#101522" />
 
-  <!-- Open Graph -->
-  <meta property="og:type" content="profile">
-  <meta property="og:site_name" content="karaboga.dev">
-  <meta property="og:title" content="Cihat Karaboğa — Mobile Software Engineer &amp; Flutter Developer">
-  <meta property="og:description" content="5+ years building fast, reliable iOS and Android apps in Flutter and Dart.">
-  <meta property="og:url" content="https://karaboga.dev/">
-  <meta property="og:locale" content="en_US">
-  <meta property="og:locale:alternate" content="tr_TR">
-  <meta property="og:image" content="https://karaboga.dev/og.png">
-  <meta property="og:image:secure_url" content="https://karaboga.dev/og.png">
-  <meta property="og:image:type" content="image/png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Cihat Karaboğa — Mobile Software Engineer">
-  <meta property="profile:first_name" content="Cihat">
-  <meta property="profile:last_name" content="Karaboğa">
-  <meta property="profile:username" content="karabogadev">
+    <!-- Open Graph -->
+    <meta property="og:type" content="profile" />
+    <meta property="og:site_name" content="karaboga.dev" />
+    <meta
+      property="og:title"
+      content="Cihat Karaboğa — Mobile Software Engineer &amp; Flutter Developer"
+    />
+    <meta
+      property="og:description"
+      content="5+ years building fast, reliable iOS and Android apps in Flutter and Dart."
+    />
+    <meta property="og:url" content="https://karaboga.dev/" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale:alternate" content="tr_TR" />
+    <meta property="og:image" content="https://karaboga.dev/og.png" />
+    <meta
+      property="og:image:secure_url"
+      content="https://karaboga.dev/og.png"
+    />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Cihat Karaboğa — Mobile Software Engineer"
+    />
+    <meta property="profile:first_name" content="Cihat" />
+    <meta property="profile:last_name" content="Karaboğa" />
+    <meta property="profile:username" content="karabogadev" />
 
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Cihat Karaboğa — Mobile Software Engineer &amp; Flutter Developer">
-  <meta name="twitter:description" content="5+ years building fast, reliable iOS and Android apps in Flutter and Dart.">
-  <meta name="twitter:image" content="https://karaboga.dev/og.png">
-  <meta name="twitter:image:alt" content="Cihat Karaboğa — Mobile Software Engineer">
-  <meta name="twitter:site" content="@karabogadev">
-  <meta name="twitter:creator" content="@karabogadev">
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Cihat Karaboğa — Mobile Software Engineer &amp; Flutter Developer"
+    />
+    <meta
+      name="twitter:description"
+      content="5+ years building fast, reliable iOS and Android apps in Flutter and Dart."
+    />
+    <meta name="twitter:image" content="https://karaboga.dev/og.png" />
+    <meta
+      name="twitter:image:alt"
+      content="Cihat Karaboğa — Mobile Software Engineer"
+    />
+    <meta name="twitter:site" content="@karabogadev" />
+    <meta name="twitter:creator" content="@karabogadev" />
 
-  <!-- Icons & manifest -->
-  <link rel="icon" href="/favicon.ico" sizes="48x48">
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="manifest" href="/manifest.webmanifest">
+    <!-- Icons & manifest -->
+    <link rel="icon" href="/favicon.ico" sizes="48x48" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.webmanifest" />
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+    />
 
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
+    <script type="application/ld+json">
       {
-        "@type": "WebSite",
-        "@id": "https://karaboga.dev/#website",
-        "url": "https://karaboga.dev/",
-        "name": "Cihat Karaboğa",
-        "alternateName": "karaboga.dev",
-        "description": "Personal site of Cihat Karaboğa, mobile software engineer.",
-        "inLanguage": "en",
-        "publisher": { "@id": "https://karaboga.dev/#person" }
-      },
-      {
-        "@type": "ProfilePage",
-        "@id": "https://karaboga.dev/#webpage",
-        "url": "https://karaboga.dev/",
-        "name": "Cihat Karaboğa — Mobile Software Engineer & Flutter Developer",
-        "isPartOf": { "@id": "https://karaboga.dev/#website" },
-        "about": { "@id": "https://karaboga.dev/#person" },
-        "mainEntity": { "@id": "https://karaboga.dev/#person" },
-        "primaryImageOfPage": { "@id": "https://karaboga.dev/#primaryimage" },
-        "dateCreated": "2026-05-19",
-        "dateModified": "2026-09-01",
-        "inLanguage": "en"
-      },
-      {
-        "@type": "ImageObject",
-        "@id": "https://karaboga.dev/#primaryimage",
-        "url": "https://karaboga.dev/og.png",
-        "contentUrl": "https://karaboga.dev/og.png",
-        "width": 1200,
-        "height": 630,
-        "caption": "Cihat Karaboğa — Mobile Software Engineer"
-      },
-      {
-        "@type": "Person",
-        "@id": "https://karaboga.dev/#person",
-        "name": "Cihat Karaboğa",
-        "alternateName": "Cihat Karaboga",
-        "givenName": "Cihat",
-        "familyName": "Karaboğa",
-        "url": "https://karaboga.dev/",
-        "mainEntityOfPage": { "@id": "https://karaboga.dev/#webpage" },
-        "jobTitle": "Mobile Software Engineer",
-        "hasOccupation": {
-          "@type": "Occupation",
-          "name": "Mobile Software Engineer",
-          "occupationalCategory": "15-1252.00"
-        },
-        "description": "Mobile software engineer specializing in Flutter and Dart for cross-platform iOS and Android apps.",
-        "email": "mailto:cihat@karaboga.dev",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Istanbul",
-          "addressCountry": "TR"
-        },
-        "worksFor": { "@type": "Organization", "name": "Altur Teknoloji" },
-        "alumniOf": {
-          "@type": "CollegeOrUniversity",
-          "name": "Fırat University",
-          "sameAs": "https://www.firat.edu.tr/"
-        },
-        "knowsLanguage": ["Turkish", "English"],
-        "knowsAbout": [
-          "Flutter", "Dart", "Mobile app development", "iOS development",
-          "Android development", "Cross-platform development", "BLoC",
-          "Riverpod", "Clean Architecture", "Firebase", "CI/CD"
-        ],
-        "sameAs": [
-          "https://github.com/karabogadev",
-          "https://www.linkedin.com/in/karabogadev/",
-          "https://x.com/karabogadev"
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "https://karaboga.dev/#website",
+            "url": "https://karaboga.dev/",
+            "name": "Cihat Karaboğa",
+            "alternateName": "karaboga.dev",
+            "description": "Personal site of Cihat Karaboğa, mobile software engineer.",
+            "inLanguage": "en",
+            "publisher": { "@id": "https://karaboga.dev/#person" }
+          },
+          {
+            "@type": "ProfilePage",
+            "@id": "https://karaboga.dev/#webpage",
+            "url": "https://karaboga.dev/",
+            "name": "Cihat Karaboğa — Mobile Software Engineer & Flutter Developer",
+            "isPartOf": { "@id": "https://karaboga.dev/#website" },
+            "about": { "@id": "https://karaboga.dev/#person" },
+            "mainEntity": { "@id": "https://karaboga.dev/#person" },
+            "primaryImageOfPage": {
+              "@id": "https://karaboga.dev/#primaryimage"
+            },
+            "dateCreated": "2026-05-19",
+            "dateModified": "2026-09-06",
+            "inLanguage": "en"
+          },
+          {
+            "@type": "ImageObject",
+            "@id": "https://karaboga.dev/#primaryimage",
+            "url": "https://karaboga.dev/og.png",
+            "contentUrl": "https://karaboga.dev/og.png",
+            "width": 1200,
+            "height": 630,
+            "caption": "Cihat Karaboğa — Mobile Software Engineer"
+          },
+          {
+            "@type": "Person",
+            "@id": "https://karaboga.dev/#person",
+            "name": "Cihat Karaboğa",
+            "alternateName": "Cihat Karaboga",
+            "givenName": "Cihat",
+            "familyName": "Karaboğa",
+            "url": "https://karaboga.dev/",
+            "mainEntityOfPage": { "@id": "https://karaboga.dev/#webpage" },
+            "jobTitle": "Mobile Software Engineer",
+            "hasOccupation": {
+              "@type": "Occupation",
+              "name": "Mobile Software Engineer",
+              "occupationalCategory": "15-1252.00"
+            },
+            "description": "Mobile software engineer specializing in Flutter and Dart for cross-platform iOS and Android apps.",
+            "email": [
+              "mailto:cihat@karaboga.dev",
+              "mailto:cihattkaraboga@gmail.com"
+            ],
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Istanbul",
+              "addressCountry": "TR"
+            },
+            "worksFor": { "@type": "Organization", "name": "Altur Teknoloji" },
+            "alumniOf": {
+              "@type": "CollegeOrUniversity",
+              "name": "Fırat University",
+              "sameAs": "https://www.firat.edu.tr/"
+            },
+            "knowsLanguage": ["Turkish", "English"],
+            "knowsAbout": [
+              "Flutter",
+              "Dart",
+              "Mobile app development",
+              "iOS development",
+              "Android development",
+              "Cross-platform development",
+              "BLoC",
+              "Riverpod",
+              "Clean Architecture",
+              "Firebase",
+              "CI/CD"
+            ],
+            "sameAs": [
+              "https://github.com/karabogadev",
+              "https://www.linkedin.com/in/karabogadev/",
+              "https://x.com/karabogadev"
+            ]
+          }
         ]
       }
-    ]
-  }
-  </script>
+    </script>
 
-  <!-- resolve theme + language before paint to avoid a flash -->
-  <script>
-    (function () {
-      var d = document.documentElement;
-      d.classList.add('js');
+    <!-- resolve theme + language before paint to avoid a flash -->
+    <script>
+      (function () {
+        var d = document.documentElement;
+        d.classList.add("js");
 
-      var stored = localStorage.getItem('theme');
-      var theme = stored || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-      d.setAttribute('data-theme', theme);
-      var meta = document.getElementById('theme-color');
-      if (meta) meta.content = theme === 'dark' ? '#0e0e0d' : '#fbfbfa';
+        var read = function (key) {
+          try {
+            return localStorage.getItem(key);
+          } catch (_) {
+            return null;
+          }
+        };
+        var stored = read("theme");
+        var theme =
+          stored === "dark" || stored === "light"
+            ? stored
+            : window.matchMedia("(prefers-color-scheme: dark)").matches
+              ? "dark"
+              : "light";
+        d.setAttribute("data-theme", theme);
+        var meta = document.getElementById("theme-color");
+        if (meta) meta.content = theme === "dark" ? "#101522" : "#f7f8fc";
 
-      // URL wins over the stored choice so ?lang=tr links are shareable
-      var param = new URLSearchParams(location.search).get('lang');
-      var lang = (param === 'tr' || param === 'en') ? param
-        : localStorage.getItem('lang')
-        || ((navigator.language || 'en').toLowerCase().indexOf('tr') === 0 ? 'tr' : 'en');
-      d.setAttribute('data-lang', lang);
-    })();
-  </script>
+        // URL wins over the stored choice so ?lang=tr links are shareable
+        var param = new URLSearchParams(location.search).get("lang");
+        var lang =
+          param === "tr" || param === "en"
+            ? param
+            : ((read("lang") === "tr" || read("lang") === "en") &&
+                read("lang")) ||
+              ((navigator.language || "en").toLowerCase().indexOf("tr") === 0
+                ? "tr"
+                : "en");
+        d.setAttribute("data-lang", lang);
+      })();
+    </script>
 
-  <style>
-    *,*::before,*::after { box-sizing: border-box; margin: 0 }
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+      }
+      :root {
+        --font:
+          "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        --mono: ui-monospace, SFMono-Regular, Menlo, monospace;
+        --wrap: 77rem;
+        --pad: clamp(1.25rem, 4vw, 2.5rem);
+        --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+      }
+      [data-theme="light"] {
+        --bg: #f7f8fc;
+        --paper: #fff;
+        --ink: #192238;
+        --ink-2: #576176;
+        --ink-3: #626d83;
+        --border: #dce1ed;
+        --accent: #3659db;
+        --accent-ink: #3659db;
+        --accent-soft: #e9edff;
+        --studio: #e9eafd;
+        --header: rgba(247, 248, 252, 0.94);
+        --green: #287150;
+        --green-bg: #e8f3ed;
+        --shadow: 0 24px 55px -35px rgba(30, 40, 80, 0.3);
+        color-scheme: light;
+      }
+      [data-theme="dark"] {
+        --bg: #101522;
+        --paper: #171e2e;
+        --ink: #edf0fa;
+        --ink-2: #aab4ca;
+        --ink-3: #a1adc4;
+        --border: #303b51;
+        --accent: #3659db;
+        --accent-ink: #a9b9ff;
+        --accent-soft: #242f50;
+        --studio: #252d48;
+        --header: rgba(16, 21, 34, 0.94);
+        --green: #91d7af;
+        --green-bg: #203c32;
+        --shadow: 0 24px 55px -35px rgba(0, 0, 0, 0.7);
+        color-scheme: dark;
+      }
+      html {
+        -webkit-text-size-adjust: 100%;
+        scroll-behavior: smooth;
+        scroll-padding-top: 7rem;
+      }
+      body {
+        background: var(--bg);
+        color: var(--ink);
+        font: 1rem/1.7 var(--font);
+        -webkit-font-smoothing: antialiased;
+      }
+      a {
+        color: inherit;
+        text-underline-offset: 0.25em;
+      }
+      button {
+        font: inherit;
+        color: inherit;
+        cursor: pointer;
+      }
+      button,
+      a {
+        -webkit-tap-highlight-color: transparent;
+      }
+      svg {
+        display: block;
+        flex-shrink: 0;
+      }
+      ::selection {
+        background: var(--accent);
+        color: white;
+      }
+      :focus-visible {
+        outline: 3px solid var(--accent-ink);
+        outline-offset: 5px;
+        border-radius: 4px;
+      }
+      .wrap {
+        width: 100%;
+        max-width: var(--wrap);
+        padding-inline: var(--pad);
+        margin-inline: auto;
+      }
+      .skip {
+        position: fixed;
+        left: 1rem;
+        top: -5rem;
+        z-index: 30;
+        padding: 0.8rem 1rem;
+        background: var(--ink);
+        color: var(--bg);
+        border-radius: 0.5rem;
+      }
+      .skip:focus {
+        top: 1rem;
+      }
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      }
+      .site-header {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        background: var(--header);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border-bottom: 1px solid var(--border);
+      }
+      .header-inner {
+        min-height: 5.5rem;
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+      }
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.65rem;
+        font-size: 1.05rem;
+        font-weight: 800;
+        letter-spacing: -0.04em;
+        text-decoration: none;
+        white-space: nowrap;
+      }
+      .brand img {
+        width: 2.15rem;
+        height: 2.15rem;
+        border-radius: 0.6rem;
+      }
+      .site-nav {
+        display: flex;
+        gap: 1.6rem;
+        margin-left: auto;
+      }
+      .site-nav a {
+        display: flex;
+        align-items: center;
+        min-height: 44px;
+        color: var(--ink-2);
+        font-size: 0.84rem;
+        font-weight: 600;
+        text-decoration: none;
+        position: relative;
+      }
+      .site-nav a:hover,
+      .site-nav a[aria-current="location"] {
+        color: var(--accent-ink);
+      }
+      .site-nav a[aria-current="location"]::after {
+        content: "";
+        position: absolute;
+        bottom: 1px;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: currentColor;
+        border-radius: 2px;
+      }
+      .header-tools {
+        display: none;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      .js .header-tools {
+        display: flex;
+      }
+      .lang {
+        display: flex;
+        gap: 2px;
+        align-items: center;
+        padding: 3px;
+        border: 1px solid var(--border);
+        border-radius: 10px;
+      }
+      .lang button {
+        min-width: 40px;
+        min-height: 38px;
+        padding: 0.4rem;
+        border: 0;
+        border-radius: 6px;
+        background: none;
+        font-size: 0.72rem;
+        font-weight: 800;
+        color: var(--ink-2);
+      }
+      .lang button[aria-pressed="true"] {
+        background: var(--paper);
+        color: var(--ink);
+        box-shadow: 0 1px 5px #0000000b;
+      }
+      .theme-btn {
+        width: 44px;
+        height: 44px;
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        display: grid;
+        place-items: center;
+        background: transparent;
+      }
+      .theme-btn:hover {
+        background: var(--paper);
+      }
+      .theme-btn svg {
+        grid-area: 1/1;
+        width: 18px;
+        height: 18px;
+      }
+      .icon-sun,
+      [data-theme="dark"] .icon-moon {
+        display: none;
+      }
+      [data-theme="dark"] .icon-sun {
+        display: block;
+      }
+      .section {
+        padding-block: clamp(4rem, 7vw, 6rem);
+        scroll-margin-top: 1rem;
+      }
+      .hero {
+        padding-top: clamp(3.5rem, 6vw, 5.5rem);
+        padding-bottom: 3.5rem;
+      }
+      .hero-layout {
+        display: grid;
+        grid-template-columns: 1.2fr 1fr;
+        gap: 3rem;
+        align-items: center;
+      }
+      .intro {
+        display: flex;
+        align-items: center;
+        gap: 0.55rem;
+        color: var(--ink-2);
+        font-size: 0.88rem;
+        font-weight: 600;
+        margin-bottom: 1.4rem;
+      }
+      .intro svg {
+        color: var(--accent-ink);
+        width: 18px;
+        height: 18px;
+      }
+      h1 {
+        font-size: clamp(3.4rem, 6.5vw, 5.6rem);
+        line-height: 1.07;
+        letter-spacing: -0.07em;
+        font-weight: 800;
+        margin-left: -0.055em;
+      }
+      h1 span {
+        display: block;
+      }
+      .hero-subtitle {
+        margin-top: 1.65rem;
+        font-size: clamp(1.25rem, 2vw, 1.5rem);
+        font-weight: 600;
+        line-height: 1.4;
+        letter-spacing: -0.035em;
+        max-width: 27ch;
+        text-wrap: balance;
+      }
+      .lead {
+        max-width: 45ch;
+        margin-top: 0.9rem;
+        color: var(--ink-2);
+        font-size: 0.98rem;
+        line-height: 1.85;
+        text-wrap: pretty;
+      }
+      .cta {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 0.75rem;
+        margin-top: 1.9rem;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.7rem;
+        min-height: 49px;
+        border: 1px solid transparent;
+        border-radius: 9px;
+        padding: 0.7rem 1.2rem;
+        font-size: 0.85rem;
+        font-weight: 700;
+        text-decoration: none;
+        transition:
+          background 0.18s,
+          box-shadow 0.18s;
+      }
+      .btn svg {
+        width: 17px;
+        height: 17px;
+      }
+      .btn-primary {
+        background: var(--accent);
+        color: #fff;
+        box-shadow: 0 4px 10px #3659db20;
+      }
+      .btn-primary:hover {
+        background: #2949bf;
+        box-shadow: 0 6px 18px #3659db30;
+      }
+      .btn-ghost {
+        border-color: var(--border);
+        background: var(--paper);
+        color: var(--ink);
+      }
+      .btn-ghost:hover {
+        background: var(--accent-soft);
+      }
+      .hero-note {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 0.6rem 1.4rem;
+        margin-top: 1.65rem;
+        font-size: 0.75rem;
+        color: var(--ink-2);
+      }
+      .status {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      .status::before {
+        content: "";
+        width: 7px;
+        height: 7px;
+        flex-shrink: 0;
+        border-radius: 50%;
+        background: var(--green);
+        box-shadow: 0 0 0 4px var(--green-bg);
+      }
+      .studio {
+        position: relative;
+        min-height: 492px;
+        border-radius: 26px;
+        background: var(--studio);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 1.45rem 1.5rem 1.2rem;
+        overflow: hidden;
+      }
+      .studio-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 0.8rem;
+        width: 100%;
+        font-size: 0.72rem;
+        font-weight: 600;
+        color: var(--ink-2);
+      }
+      .platform-switch {
+        display: none;
+        padding: 3px;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        background: var(--bg);
+      }
+      .js .platform-switch {
+        display: flex;
+      }
+      .platform-switch button {
+        border: 0;
+        background: transparent;
+        padding: 0.35rem 0.65rem;
+        min-height: 36px;
+        border-radius: 5px;
+        font-size: 0.7rem;
+        font-weight: 700;
+        color: var(--ink-2);
+      }
+      .platform-switch button[aria-pressed="true"] {
+        background: var(--paper);
+        color: var(--ink);
+        box-shadow: 0 1px 4px #0000000c;
+      }
+      .device-scene {
+        position: relative;
+        display: grid;
+        place-items: center;
+        flex: 1;
+        width: 100%;
+        padding: 1.45rem 0 1.15rem;
+      }
+      .orbit {
+        position: absolute;
+        width: 300px;
+        height: 300px;
+        border: 1px solid var(--border);
+        border-radius: 50%;
+        pointer-events: none;
+      }
+      .orbit::after {
+        content: "";
+        position: absolute;
+        inset: -30px;
+        border: 1px solid var(--border);
+        border-radius: 50%;
+      }
+      .phone {
+        position: relative;
+        width: 206px;
+        background: #20283b;
+        padding: 6px;
+        border-radius: 33px;
+        transform: rotate(6deg);
+        box-shadow:
+          12px 20px 35px #17244826,
+          inset 0 0 0 1px #637088;
+        transition:
+          transform 0.35s var(--ease),
+          border-radius 0.35s var(--ease);
+      }
+      .phone-screen {
+        background: #fbfcff;
+        color: #192238;
+        border-radius: 28px;
+        overflow: hidden;
+        padding: 12px 14px 10px;
+      }
+      .phone-top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+        margin: 0 2px 19px;
+        font-size: 8px;
+        font-weight: 800;
+        height: 14px;
+      }
+      .phone-island {
+        position: absolute;
+        top: -5px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 59px;
+        height: 17px;
+        border-radius: 12px;
+        background: #20283b;
+        transition:
+          width 0.3s,
+          height 0.3s;
+      }
+      .phone-bars {
+        display: flex;
+        align-items: end;
+        gap: 2px;
+        height: 8px;
+      }
+      .phone-bars i {
+        width: 3px;
+        background: #192238;
+        border-radius: 1px;
+      }
+      .phone-bars i:nth-child(1) {
+        height: 4px;
+      }
+      .phone-bars i:nth-child(2) {
+        height: 6px;
+      }
+      .phone-bars i:nth-child(3) {
+        height: 8px;
+      }
+      .app-heading {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 11px;
+        font-weight: 800;
+      }
+      .app-heading svg {
+        width: 15px;
+        height: 15px;
+        color: #3659db;
+      }
+      .app-greeting {
+        font-size: 8px;
+        color: #626d83;
+        margin-top: 3px;
+      }
+      .pulse {
+        display: grid;
+        place-items: center;
+        position: relative;
+        width: 142px;
+        height: 142px;
+        margin: 15px auto 10px;
+      }
+      .pulse > svg {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        transform: rotate(-90deg);
+      }
+      .pulse-reading {
+        text-align: center;
+        line-height: 1.15;
+      }
+      .pulse-reading svg {
+        width: 16px;
+        height: 16px;
+        margin: 0 auto 4px;
+        color: #3659db;
+      }
+      .pulse-reading strong {
+        display: block;
+        font-size: 35px;
+        font-weight: 800;
+        letter-spacing: -0.05em;
+      }
+      .pulse-reading span {
+        font-size: 8px;
+        color: #626d83;
+      }
+      .app-health {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 4px;
+        font-size: 8px;
+        font-weight: 700;
+        color: #287150;
+        margin-bottom: 15px;
+      }
+      .app-health::before {
+        content: "";
+        width: 4px;
+        height: 4px;
+        background: currentColor;
+        border-radius: 50%;
+      }
+      .app-trip {
+        background: #edf0f9;
+        border-radius: 10px;
+        padding: 10px 11px;
+      }
+      .app-trip-title {
+        display: flex;
+        justify-content: space-between;
+        font-size: 8px;
+        font-weight: 800;
+      }
+      .app-trip svg {
+        width: 100%;
+        height: 29px;
+        margin-top: 9px;
+      }
+      .app-tabbar {
+        display: flex;
+        justify-content: space-around;
+        border-top: 1px solid #e3e8f3;
+        margin-top: 14px;
+        padding: 12px 0 4px;
+        color: #78849b;
+      }
+      .app-tabbar svg {
+        width: 15px;
+        height: 15px;
+      }
+      .app-tabbar svg:first-child {
+        color: #3659db;
+      }
+      .home-indicator {
+        width: 57px;
+        height: 3px;
+        background: #20283b;
+        border-radius: 4px;
+        margin: 7px auto 0;
+      }
+      [data-platform="android"] .phone {
+        transform: rotate(-5deg);
+        border-radius: 24px;
+      }
+      [data-platform="android"] .phone-screen {
+        border-radius: 19px;
+      }
+      [data-platform="android"] .phone-island {
+        width: 8px;
+        height: 8px;
+        top: 0;
+      }
+      [data-platform="android"] .home-indicator {
+        width: 32px;
+      }
+      .studio-chip {
+        position: absolute;
+        padding: 0.6rem 0.8rem;
+        background: var(--paper);
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        font-size: 0.72rem;
+        font-weight: 700;
+        box-shadow: var(--shadow);
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      .studio-chip svg {
+        width: 19px;
+        height: 19px;
+        color: var(--accent-ink);
+      }
+      .chip-flutter {
+        left: 0;
+        top: 26%;
+      }
+      .chip-platform {
+        right: -3px;
+        bottom: 21%;
+      }
+      .studio-caption {
+        font-size: 0.7rem;
+        color: var(--ink-2);
+        text-align: center;
+      }
+      .trusted {
+        display: flex;
+        gap: 2.5rem;
+        align-items: center;
+        border-bottom: 1px solid var(--border);
+        padding-block: 2.7rem 2.2rem;
+        margin-top: 1.5rem;
+      }
+      .trusted-label {
+        color: var(--ink-3);
+        font-size: 0.75rem;
+        max-width: 14ch;
+        line-height: 1.6;
+      }
+      .companies {
+        display: flex;
+        justify-content: space-between;
+        gap: 1.5rem;
+        align-items: center;
+        flex: 1;
+        flex-wrap: wrap;
+        color: var(--ink-2);
+      }
+      .companies span {
+        font-weight: 800;
+        font-size: 1.08rem;
+        letter-spacing: -0.045em;
+      }
+      .companies .company-bookcars {
+        letter-spacing: -0.06em;
+        font-size: 1.2rem;
+      }
+      .section-heading {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        gap: 2rem;
+        margin-bottom: 2rem;
+      }
+      h2 {
+        font-size: clamp(1.8rem, 3vw, 2.45rem);
+        font-weight: 800;
+        letter-spacing: -0.055em;
+        line-height: 1.25;
+        text-wrap: balance;
+      }
+      .section-intro {
+        color: var(--ink-2);
+        margin-top: 0.7rem;
+        max-width: 53ch;
+        font-size: 0.91rem;
+        text-wrap: pretty;
+      }
+      .more {
+        display: inline-flex;
+        align-items: center;
+        justify-content: start;
+        gap: 0.5rem;
+        min-height: 44px;
+        font-size: 0.8rem;
+        font-weight: 700;
+        color: var(--ink-2);
+        text-decoration: none;
+      }
+      .more svg {
+        width: 16px;
+        height: 16px;
+      }
+      .more:hover {
+        color: var(--accent-ink);
+      }
+      .project-grid {
+        display: grid;
+        grid-template-columns: 1.18fr 1fr 1fr;
+        gap: 1.25rem;
+      }
+      .project {
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        border: 1px solid var(--border);
+        background: var(--paper);
+        border-radius: 16px;
+        text-decoration: none;
+        transition:
+          border-color 0.2s,
+          box-shadow 0.2s;
+      }
+      .project:hover {
+        border-color: var(--accent-ink);
+        box-shadow: var(--shadow);
+      }
+      .project-art {
+        height: 220px;
+        position: relative;
+        display: grid;
+        place-items: center;
+        overflow: hidden;
+        border-bottom: 1px solid var(--border);
+      }
+      .art-code {
+        background: #e9eefd;
+        padding: 1.5rem 1.25rem;
+      }
+      .code-window {
+        width: 100%;
+        max-width: 300px;
+        border-radius: 10px;
+        background: #202a43;
+        box-shadow: 0 12px 24px #19223826;
+        transform: rotate(-3deg);
+      }
+      .window-toolbar {
+        padding: 10px 12px;
+        display: flex;
+        gap: 4px;
+        align-items: center;
+        border-bottom: 1px solid #ffffff17;
+      }
+      .window-toolbar i {
+        width: 5px;
+        height: 5px;
+        background: #8993ad;
+        border-radius: 50%;
+      }
+      .window-toolbar span {
+        margin-left: 8px;
+        color: #aebbd7;
+        font: 9px var(--mono);
+      }
+      .code-content {
+        padding: 12px 16px 16px;
+        color: #d9e4ff;
+        font: 10px/1.9 var(--mono);
+      }
+      .code-content .code-blue {
+        color: #9db5ff;
+      }
+      .code-content .code-muted {
+        color: #9aa9c7;
+      }
+      .art-game {
+        background: #e0eee9;
+      }
+      .road {
+        position: relative;
+        width: 123px;
+        height: 330px;
+        background: #3f5260;
+        border-inline: 5px solid #f0f4e9;
+        transform: rotate(23deg);
+        box-shadow: 0 0 0 12px #bed6c7;
+      }
+      .road::before,
+      .road::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background: repeating-linear-gradient(
+          to bottom,
+          #b7c6cc 0 16px,
+          transparent 16px 32px
+        );
+      }
+      .road::before {
+        left: 33%;
+      }
+      .road::after {
+        right: 33%;
+      }
+      .car {
+        position: absolute;
+        width: 22px;
+        height: 43px;
+        background: #b7c6e8;
+        border-radius: 6px 6px 5px 5px;
+        box-shadow: 2px 5px 0 #1d2f4240;
+        z-index: 1;
+      }
+      .car::before {
+        content: "";
+        position: absolute;
+        inset: 10px 3px 12px;
+        border-top: 7px solid #284155;
+        border-bottom: 5px solid #284155;
+        border-radius: 3px;
+      }
+      .car-main {
+        background: #f3bc5a;
+        left: 47px;
+        top: 190px;
+      }
+      .car-other {
+        left: 9px;
+        top: 105px;
+      }
+      .car-third {
+        right: 9px;
+        top: 20px;
+        background: #ea8e7b;
+      }
+      .game-tree {
+        position: absolute;
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        background: #90bca5;
+        box-shadow: 6px 5px 0 #719c8333;
+        left: 22px;
+        top: 45px;
+      }
+      .game-tree.tree-two {
+        left: auto;
+        right: 25px;
+        top: 145px;
+        width: 36px;
+        height: 36px;
+      }
+      .art-web {
+        background: #eee9e4;
+        padding: 1.4rem;
+      }
+      .mini-site {
+        width: 100%;
+        max-width: 240px;
+        padding: 15px;
+        background: #f7f8fc;
+        border: 1px solid #dce1ed;
+        border-radius: 7px;
+        box-shadow: 5px 10px 22px #4b3a3020;
+        transform: rotate(-4deg);
+        color: #192238;
+      }
+      .mini-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid #dce1ed;
+        padding-bottom: 10px;
+        font-size: 7px;
+        font-weight: 800;
+      }
+      .mini-dots {
+        display: flex;
+        gap: 3px;
+      }
+      .mini-dots i {
+        width: 10px;
+        height: 2px;
+        background: #ccd3e2;
+      }
+      .mini-body {
+        display: grid;
+        grid-template-columns: 1.1fr 1fr;
+        gap: 12px;
+        padding-block: 19px 16px;
+      }
+      .mini-name {
+        font-size: 20px;
+        font-weight: 800;
+        letter-spacing: -0.07em;
+        line-height: 1.1;
+      }
+      .mini-lines {
+        width: 80%;
+        height: 12px;
+        margin-top: 10px;
+        background: repeating-linear-gradient(
+          to bottom,
+          #d3d9e7 0 2px,
+          transparent 2px 5px
+        );
+      }
+      .mini-button {
+        width: 36px;
+        height: 10px;
+        margin-top: 7px;
+        border-radius: 2px;
+        background: #3659db;
+      }
+      .mini-visual {
+        background: #e1e4fa;
+        border-radius: 5px;
+        display: grid;
+        place-items: center;
+      }
+      .mini-device {
+        width: 28px;
+        height: 53px;
+        background: #f7f8fc;
+        border: 3px solid #28324b;
+        border-radius: 6px;
+        transform: rotate(9deg);
+      }
+      .mini-bottom {
+        display: flex;
+        gap: 6px;
+      }
+      .mini-bottom i {
+        flex: 1;
+        height: 23px;
+        border-radius: 3px;
+        background: #e5eaf6;
+      }
+      .mini-bottom i:nth-child(2) {
+        background: #e0eee9;
+      }
+      .mini-bottom i:nth-child(3) {
+        background: #eee9e4;
+      }
+      .project-body {
+        padding: 1.4rem;
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+      }
+      .project-category {
+        font-size: 0.7rem;
+        color: var(--ink-3);
+        font-weight: 600;
+        margin-bottom: 0.55rem;
+      }
+      .project-title {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.6rem;
+      }
+      .project-title h3 {
+        font-size: 1.11rem;
+        font-weight: 800;
+        letter-spacing: -0.035em;
+        line-height: 1.4;
+      }
+      .project-title svg {
+        width: 17px;
+        height: 17px;
+        color: var(--ink-3);
+      }
+      .project-desc {
+        color: var(--ink-2);
+        font-size: 0.82rem;
+        line-height: 1.85;
+        margin-top: 0.7rem;
+        margin-bottom: 1.2rem;
+      }
+      .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.4rem;
+        padding: 0;
+        list-style: none;
+        margin-top: auto;
+      }
+      .tags li {
+        font-size: 0.65rem;
+        font-weight: 600;
+        padding: 0.2rem 0.55rem;
+        background: var(--bg);
+        color: var(--ink-2);
+        border: 1px solid var(--border);
+        border-radius: 5px;
+      }
+      .experience {
+        background: var(--paper);
+        border-block: 1px solid var(--border);
+      }
+      .split {
+        display: grid;
+        grid-template-columns: 0.75fr 1.25fr;
+        gap: clamp(2rem, 7vw, 7rem);
+      }
+      .section-aside {
+        align-self: start;
+        position: sticky;
+        top: 8rem;
+      }
+      .section-aside .section-intro {
+        max-width: 30ch;
+      }
+      .section-aside .more {
+        margin-top: 1.2rem;
+      }
+      .xp {
+        position: relative;
+        padding: 0 0 2.2rem 1.8rem;
+        border-left: 1px solid var(--border);
+      }
+      .xp:last-child {
+        padding-bottom: 0;
+        border-color: transparent;
+      }
+      .xp::before {
+        content: "";
+        position: absolute;
+        width: 9px;
+        height: 9px;
+        left: -5px;
+        top: 8px;
+        background: var(--paper);
+        border: 2px solid var(--ink-3);
+        border-radius: 50%;
+      }
+      .xp:first-child::before {
+        border-color: var(--accent-ink);
+        background: var(--accent-ink);
+        box-shadow: 0 0 0 5px var(--accent-soft);
+      }
+      .xp-when {
+        font-size: 0.71rem;
+        font-weight: 600;
+        color: var(--ink-3);
+        margin-bottom: 0.45rem;
+      }
+      .xp-role {
+        font-size: 1.05rem;
+        font-weight: 800;
+        letter-spacing: -0.025em;
+        display: inline;
+      }
+      .xp-org {
+        font-size: 0.88rem;
+        font-weight: 600;
+        color: var(--accent-ink);
+        margin-top: 0.15rem;
+      }
+      .xp-desc {
+        color: var(--ink-2);
+        font-size: 0.85rem;
+        line-height: 1.85;
+        margin-top: 0.7rem;
+        max-width: 62ch;
+      }
+      .about-stack {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: clamp(2rem, 7vw, 6rem);
+      }
+      .about-stack > section {
+        min-width: 0;
+        scroll-margin-top: 8rem;
+      }
+      .prose {
+        margin-top: 1.5rem;
+      }
+      .prose p {
+        color: var(--ink-2);
+        font-size: 0.9rem;
+        line-height: 1.9;
+        max-width: 56ch;
+        text-wrap: pretty;
+      }
+      .prose p + p {
+        margin-top: 1rem;
+      }
+      .about-location {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin-top: 1.5rem;
+        color: var(--ink-3);
+        font-size: 0.8rem;
+      }
+      .about-location svg {
+        width: 16px;
+        height: 16px;
+      }
+      .stack {
+        margin-top: 1.5rem;
+      }
+      .stack-group {
+        padding-block: 0.85rem;
+        border-bottom: 1px solid var(--border);
+        display: grid;
+        grid-template-columns: 7rem 1fr;
+        gap: 1rem;
+      }
+      .stack-group:first-child {
+        padding-top: 0;
+      }
+      .stack-group:last-child {
+        border: 0;
+      }
+      .stack dt {
+        color: var(--ink-3);
+        font-size: 0.75rem;
+        font-weight: 600;
+        padding-top: 0.15rem;
+      }
+      .stack dd {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.35rem 0.5rem;
+        margin: 0;
+        font-size: 0.76rem;
+        font-weight: 600;
+      }
+      .stack dd span {
+        padding: 0.1rem 0.5rem;
+        background: var(--paper);
+        border: 1px solid var(--border);
+        border-radius: 5px;
+      }
+      .contact-section {
+        padding-bottom: 5rem;
+        scroll-margin-top: 8rem;
+      }
+      .contact-panel {
+        display: grid;
+        grid-template-columns: 1.1fr 1fr;
+        align-items: center;
+        gap: 2rem;
+        padding: clamp(1.75rem, 4vw, 3.25rem);
+        background: var(--studio);
+        border-radius: 20px;
+      }
+      .contact-panel h2 {
+        max-width: 17ch;
+        font-size: clamp(1.9rem, 3.4vw, 2.7rem);
+      }
+      .contact-panel p {
+        color: var(--ink-2);
+        font-size: 0.87rem;
+        margin-top: 0.8rem;
+        max-width: 40ch;
+      }
+      .contact-actions {
+        justify-self: end;
+        max-width: 100%;
+        min-width: 0;
+      }
+      .email-link {
+        display: inline-block;
+        font-size: clamp(1rem, 2.3vw, 1.6rem);
+        font-weight: 700;
+        letter-spacing: -0.04em;
+        text-decoration-thickness: 1px;
+        overflow-wrap: anywhere;
+      }
+      .contact-buttons {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        margin-top: 1.25rem;
+      }
+      .copy-btn {
+        display: none;
+        min-height: 46px;
+        border: 0;
+        background: transparent;
+        align-items: center;
+        gap: 0.4rem;
+        font-size: 0.8rem;
+        font-weight: 600;
+        padding: 0.5rem;
+      }
+      .js .copy-btn {
+        display: inline-flex;
+      }
+      .copy-btn:hover {
+        color: var(--accent-ink);
+      }
+      .copy-btn svg {
+        width: 16px;
+        height: 16px;
+      }
+      .secondary-email {
+        border-top: 1px solid var(--border);
+        padding-top: 1rem;
+        margin-top: 1.3rem;
+      }
+      .email-label {
+        font-size: 0.72rem;
+        color: var(--ink-2);
+      }
+      .email-row {
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+      }
+      .secondary-email .email-link {
+        font-size: clamp(0.85rem, 1.6vw, 1.05rem);
+        letter-spacing: -0.025em;
+      }
+      .email-row .copy-btn {
+        flex-shrink: 0;
+        min-width: 44px;
+        justify-content: center;
+      }
+      .copy-status {
+        min-height: 1.5rem;
+        margin-top: 0.5rem;
+        font-size: 0.75rem;
+        color: var(--ink-2);
+        max-width: 38ch;
+      }
+      .site-footer {
+        border-top: 1px solid var(--border);
+      }
+      .footer-inner {
+        padding-block: 1.8rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 0.75rem 1.5rem;
+      }
+      .footer-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+      }
+      .footer-links a {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35rem;
+        min-height: 44px;
+        font-size: 0.77rem;
+        font-weight: 600;
+        color: var(--ink-2);
+        text-decoration: none;
+      }
+      .footer-links a:hover {
+        color: var(--accent-ink);
+      }
+      .footer-links svg {
+        width: 13px;
+        height: 13px;
+      }
+      .footer-note {
+        color: var(--ink-3);
+        font-size: 0.72rem;
+      }
+      @keyframes arrive {
+        from {
+          opacity: 0.2;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: none;
+        }
+      }
+      .hero-layout {
+        animation: arrive 0.6s var(--ease) both;
+      }
+      @media (min-width: 1100px) {
+        .studio-chip {
+          padding: 0.75rem 0.95rem;
+        }
+        .chip-flutter {
+          left: 4px;
+        }
+        .chip-platform {
+          right: 0;
+        }
+      }
+      @media (max-width: 1000px) {
+        .header-inner {
+          gap: 1rem;
+        }
+        .site-nav {
+          gap: 1rem;
+        }
+        .hero-layout {
+          gap: 2rem;
+          grid-template-columns: 1.1fr 1fr;
+        }
+        .studio {
+          padding-inline: 1rem;
+        }
+        .studio-chip {
+          font-size: 0.65rem;
+          padding: 0.55rem;
+        }
+        .chip-flutter {
+          left: -5px;
+          top: 19%;
+        }
+        .chip-platform {
+          right: -5px;
+          bottom: 13%;
+        }
+        .project-grid {
+          gap: 0.85rem;
+          grid-template-columns: repeat(3, 1fr);
+        }
+        .project-body {
+          padding: 1.15rem;
+        }
+        .project-art {
+          height: 190px;
+        }
+        .trusted {
+          gap: 1.5rem;
+        }
+      }
+      @media (max-width: 760px) {
+        html {
+          scroll-padding-top: 9rem;
+        }
+        .header-inner {
+          flex-wrap: wrap;
+          gap: 0 1rem;
+          padding-top: 0.65rem;
+          min-height: 0;
+        }
+        .brand {
+          font-size: 0.95rem;
+        }
+        .brand img {
+          width: 29px;
+          height: 29px;
+        }
+        .header-tools {
+          margin-left: auto;
+        }
+        .site-nav {
+          order: 3;
+          width: 100%;
+          justify-content: space-between;
+          margin: 0.4rem 0 0;
+          gap: 0.5rem;
+        }
+        .site-nav a {
+          font-size: 0.76rem;
+          min-height: 44px;
+        }
+        .hero {
+          padding-top: 2.8rem;
+          padding-bottom: 1rem;
+        }
+        .hero-layout {
+          grid-template-columns: 1fr;
+          gap: 2.5rem;
+        }
+        h1 {
+          font-size: clamp(3.5rem, 11vw, 5rem);
+        }
+        h1 span {
+          display: inline;
+        }
+        h1 span + span::before {
+          content: " ";
+        }
+        .hero-subtitle {
+          max-width: none;
+          margin-top: 1.2rem;
+        }
+        .lead {
+          max-width: 51ch;
+        }
+        .intro {
+          margin-bottom: 1rem;
+        }
+        .studio {
+          min-height: 460px;
+          width: 100%;
+          max-width: 520px;
+          justify-self: center;
+          padding-inline: 1.5rem;
+        }
+        .device-scene {
+          padding-top: 1rem;
+        }
+        .chip-flutter {
+          left: 7%;
+          top: 26%;
+        }
+        .chip-platform {
+          right: 5%;
+          bottom: 20%;
+        }
+        .studio-chip {
+          font-size: 0.72rem;
+          padding: 0.65rem 0.8rem;
+        }
+        .trusted {
+          align-items: start;
+          margin-top: 0;
+          gap: 1rem;
+          padding-block: 2rem;
+        }
+        .trusted-label {
+          max-width: 12ch;
+          flex-shrink: 0;
+          font-size: 0.68rem;
+        }
+        .companies {
+          justify-content: start;
+          gap: 0.65rem 1.4rem;
+        }
+        .companies span {
+          font-size: 0.95rem;
+        }
+        .companies .company-bookcars {
+          font-size: 1rem;
+        }
+        .section-heading {
+          align-items: start;
+          gap: 1rem;
+        }
+        .section-heading > .more {
+          flex-shrink: 0;
+          font-size: 0.73rem;
+        }
+        .section-intro {
+          font-size: 0.85rem;
+        }
+        .project-grid {
+          grid-template-columns: 1fr;
+          gap: 1.25rem;
+        }
+        .project {
+          display: grid;
+          grid-template-columns: 0.85fr 1.15fr;
+        }
+        .project-art {
+          min-height: 245px;
+          height: 100%;
+          border-bottom: 0;
+          border-right: 1px solid var(--border);
+        }
+        .project-body {
+          padding: 1.4rem;
+        }
+        .project-desc {
+          font-size: 0.82rem;
+        }
+        .code-content {
+          font-size: 8px;
+          padding: 10px;
+        }
+        .window-toolbar span {
+          font-size: 7px;
+        }
+        .art-code {
+          padding: 0.8rem;
+        }
+        .mini-site {
+          padding: 10px;
+        }
+        .mini-name {
+          font-size: 17px;
+        }
+        .split {
+          grid-template-columns: 1fr;
+          gap: 2.25rem;
+        }
+        .section-aside {
+          position: static;
+        }
+        .section-aside .section-intro {
+          max-width: 50ch;
+        }
+        .section-aside .more {
+          margin-top: 0.5rem;
+        }
+        .timeline {
+          padding-left: 5px;
+        }
+        .about-stack {
+          grid-template-columns: 1fr;
+          gap: 3.5rem;
+        }
+        .about-stack > section {
+          scroll-margin-top: 9rem;
+        }
+        .stack-group {
+          grid-template-columns: 8rem 1fr;
+        }
+        .contact-panel {
+          grid-template-columns: 1fr;
+          gap: 1.5rem;
+        }
+        .contact-panel h2 {
+          max-width: 23ch;
+        }
+        .contact-actions {
+          justify-self: start;
+        }
+        .email-link {
+          font-size: 1.4rem;
+        }
+        .contact-section {
+          padding-bottom: 3rem;
+        }
+      }
+      @media (max-width: 440px) {
+        .section-heading {
+          flex-direction: column;
+          gap: 0.5rem;
+          margin-bottom: 1.4rem;
+        }
+        .project {
+          display: flex;
+        }
+        .project-art {
+          height: 210px;
+          min-height: 0;
+          border-right: 0;
+          border-bottom: 1px solid var(--border);
+        }
+        .project-body {
+          padding: 1.4rem;
+        }
+        .code-window {
+          max-width: 260px;
+        }
+        .code-content {
+          font-size: 10px;
+          padding: 12px 16px;
+        }
+        .window-toolbar span {
+          font-size: 9px;
+        }
+        .art-code {
+          padding: 1.4rem 2rem;
+        }
+        .mini-site {
+          max-width: 230px;
+          padding: 15px;
+        }
+        .mini-name {
+          font-size: 20px;
+        }
+        .studio {
+          padding-inline: 1rem;
+        }
+        .studio-chip {
+          font-size: 0.63rem;
+          padding: 0.5rem 0.6rem;
+        }
+        .chip-flutter {
+          left: 0;
+          top: 22%;
+        }
+        .chip-platform {
+          right: 0;
+          bottom: 13%;
+        }
+        .studio-top {
+          font-size: 0.66rem;
+        }
+        .platform-switch button {
+          padding-inline: 0.5rem;
+        }
+        .trusted {
+          flex-direction: column;
+        }
+        .trusted-label {
+          max-width: none;
+        }
+        .companies {
+          gap: 0.65rem 1.2rem;
+        }
+        .companies span {
+          font-size: 0.84rem;
+        }
+        .companies .company-bookcars {
+          font-size: 0.93rem;
+        }
+        .stack-group {
+          grid-template-columns: 1fr;
+          gap: 0.4rem;
+        }
+        .footer-inner {
+          flex-direction: column;
+          align-items: start;
+          padding-block: 1.2rem;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+        *,
+        *::before,
+        *::after {
+          animation: none !important;
+          transition: none !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip" href="#main" data-i18n="a11y.skip">Skip to content</a>
 
-    :root {
-      /* type */
-      --font: "Geist", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, Roboto, "Helvetica Neue", Arial, sans-serif;
-      --mono: "Geist Mono", ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
-      --t-meta: .75rem;
-      --t-ui:   .875rem;
-      --t-body: 1rem;
-      --t-lead: clamp(1.02rem, .98rem + .25vw, 1.14rem);
-      --t-h2:   1.0625rem;
-      --t-h1:   clamp(2.1rem, 1.5rem + 3vw, 3.15rem);
+    <header class="site-header">
+      <div class="wrap header-inner">
+        <a
+          class="brand"
+          href="#main"
+          data-i18n-label="a11y.home"
+          aria-label="Cihat Karaboğa — home"
+          ><img
+            src="/favicon.svg"
+            width="34"
+            height="34"
+            alt=""
+          />karaboga.dev</a
+        >
 
-      /* rhythm */
-      --wrap: 48rem;
-      --rail: 8.5rem;
-      --gutter: 2.75rem;
-      --pad: clamp(1.25rem, 5vw, 2rem);
-      --section-y: clamp(3rem, 7vw, 4.75rem);
+        <nav
+          class="site-nav"
+          data-i18n-label="a11y.nav"
+          aria-label="Page sections"
+        >
+          <a href="#work" data-i18n="nav.work">Work</a>
+          <a href="#experience" data-i18n="nav.experience">Experience</a>
+          <a href="#about" data-i18n="nav.about">About</a>
+          <a href="#contact" data-i18n="nav.contact">Contact</a>
+        </nav>
 
-      --radius: .55rem;
-      --transition: .18s ease;
-      --ease: cubic-bezier(.22,.61,.36,1);
-    }
-
-    /* Every ink/accent pair below is WCAG AA (>=4.5:1) against its own --bg.
-       --accent stays vivid for decoration; --accent-ink is the text-safe tone. */
-    [data-theme="light"] {
-      --bg: #fbfbfa;
-      --bg-tint: rgba(251,251,250,.76);
-      --surface: rgba(22,21,15,.035);
-      --ink: #16150f;
-      --ink-2: #5f5c56;
-      --ink-3: #74716c;
-      --border: rgba(22,21,15,.12);
-      --border-2: rgba(22,21,15,.22);
-      --accent: #e0481f;
-      --accent-ink: #c23d18;
-      --accent-soft: rgba(224,72,31,.09);
-      --on-accent: #fff7f3;
-      color-scheme: light;
-    }
-
-    [data-theme="dark"] {
-      --bg: #0e0e0d;
-      --bg-tint: rgba(14,14,13,.72);
-      --surface: rgba(255,255,255,.038);
-      --ink: #f5f5f4;
-      --ink-2: #a3a09a;
-      --ink-3: #8b8880;
-      --border: rgba(255,255,255,.11);
-      --border-2: rgba(255,255,255,.2);
-      --accent: #ff6a3d;
-      --accent-ink: #ff6a3d;
-      --accent-soft: rgba(255,106,61,.13);
-      --on-accent: #1a0a04;
-      color-scheme: dark;
-    }
-
-    html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth }
-
-    body {
-      font-family: var(--font);
-      font-size: var(--t-body);
-      background: var(--bg);
-      color: var(--ink);
-      line-height: 1.65;
-      letter-spacing: -.011em;
-      -webkit-font-smoothing: antialiased;
-      text-rendering: optimizeLegibility;
-      min-height: 100dvh;
-      display: flex;
-      flex-direction: column;
-    }
-
-    /* ambient glow anchored behind the hero */
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      z-index: -1;
-      pointer-events: none;
-      background: radial-gradient(44rem 30rem at 50% -10%, var(--accent-soft), transparent 70%);
-    }
-
-    a { color: inherit }
-    ::selection { background: var(--ink); color: var(--bg) }
-    :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 3px }
-
-    .skip {
-      position: absolute; left: -9999px; top: 0; z-index: 100;
-      background: var(--ink); color: var(--bg);
-      padding: .5rem 1rem; font-weight: 600; border-radius: 0 0 .4rem 0;
-    }
-    .skip:focus { left: 0 }
-
-    /* mono metadata — years, counts, repo names */
-    .mono {
-      font-family: var(--mono);
-      font-variant-numeric: tabular-nums;
-      letter-spacing: 0;
-    }
-
-    /* eyebrow / rail labels */
-    .eyebrow {
-      font-family: var(--mono);
-      font-size: var(--t-meta);
-      letter-spacing: .1em;
-      text-transform: uppercase;
-      color: var(--ink-3);
-    }
-
-    .wrap {
-      width: 100%;
-      max-width: var(--wrap);
-      margin-inline: auto;
-      padding-inline: var(--pad);
-    }
-
-    /* ---------- header ---------- */
-    .site-header {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      background: var(--bg-tint);
-      -webkit-backdrop-filter: blur(12px) saturate(160%);
-      backdrop-filter: blur(12px) saturate(160%);
-      border-bottom: 1px solid var(--border);
-      animation: fade .6s ease backwards;
-    }
-    @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
-      .site-header { background: var(--bg) }
-    }
-    .header-inner {
-      display: flex;
-      align-items: center;
-      gap: 1.25rem;
-      padding-block: .8rem;
-    }
-    .brand {
-      display: inline-flex;
-      align-items: center;
-      gap: .5rem;
-      font-size: .9rem;
-      font-weight: 600;
-      letter-spacing: -.02em;
-      text-decoration: none;
-      color: var(--ink);
-      transition: color var(--transition);
-    }
-    .brand::before {
-      content: "";
-      width: .42rem;
-      height: .42rem;
-      border-radius: 50%;
-      background: var(--accent);
-      box-shadow: 0 0 .55rem var(--accent);
-    }
-    .brand:hover { color: var(--accent-ink) }
-
-    .site-nav {
-      display: flex;
-      gap: 1.35rem;
-      margin-left: auto;
-      font-size: var(--t-ui);
-    }
-    .site-nav a {
-      color: var(--ink-2);
-      text-decoration: none;
-      transition: color var(--transition);
-    }
-    .site-nav a:hover { color: var(--ink) }
-    @media (max-width: 46rem) { .site-nav { display: none } }
-
-    .header-tools {
-      display: flex;
-      align-items: center;
-      gap: .4rem;
-      margin-left: auto;
-    }
-    .site-nav ~ .header-tools { margin-left: 0 }
-
-    /* language switch — segmented, so the current language is never ambiguous */
-    .lang {
-      display: inline-flex;
-      align-items: center;
-      border: 1px solid var(--border);
-      border-radius: 2rem;
-      padding: .1rem;
-      font-family: var(--mono);
-      font-size: var(--t-meta);
-    }
-    .lang button {
-      border: 0;
-      background: transparent;
-      cursor: pointer;
-      color: var(--ink-3);
-      padding: .2rem .5rem;
-      border-radius: 2rem;
-      line-height: 1.5;
-      font: inherit;
-      transition: color var(--transition), background var(--transition);
-    }
-    .lang button:hover { color: var(--ink) }
-    .lang button[aria-pressed="true"] {
-      color: var(--ink);
-      background: var(--surface);
-    }
-
-    .theme-btn {
-      width: 2.1rem;
-      height: 2.1rem;
-      border: none;
-      background: transparent;
-      cursor: pointer;
-      padding: 0;
-      display: grid;
-      place-items: center;
-      color: var(--ink-2);
-      border-radius: 50%;
-      transition: color var(--transition), background var(--transition), transform var(--transition);
-    }
-    .theme-btn:hover { color: var(--ink); background: var(--accent-soft) }
-    .theme-btn:active { transform: scale(.9) }
-    .theme-btn svg {
-      grid-area: 1 / 1;
-      width: 1.1rem; height: 1.1rem;
-      transition: opacity .25s var(--ease), transform .4s var(--ease);
-    }
-    .icon-sun { opacity: 0; transform: rotate(-80deg) scale(.5) }
-    .icon-moon { opacity: 1; transform: none }
-    [data-theme="dark"] .icon-sun { opacity: 1; transform: none }
-    [data-theme="dark"] .icon-moon { opacity: 0; transform: rotate(80deg) scale(.5) }
-
-    /* ---------- sections ---------- */
-    main { flex: 1 }
-    .section { padding-block: var(--section-y); scroll-margin-top: 4rem }
-    .section + .section { border-top: 1px solid var(--border) }
-    .hero { padding-top: clamp(3.5rem, 9vw, 6rem) }
-
-    /* label rail on the left, content on the right — one column on small screens */
-    .grid {
-      display: grid;
-      grid-template-columns: var(--rail) minmax(0, 1fr);
-      column-gap: var(--gutter);
-    }
-    .rail {
-      position: sticky;
-      top: 4.75rem;
-      align-self: start;
-      display: flex;
-      flex-direction: column;
-      gap: .15rem;
-    }
-    .rail-num {
-      font-family: var(--mono);
-      font-size: var(--t-meta);
-      color: var(--accent-ink);
-      letter-spacing: .08em;
-    }
-    .rail-label {
-      font-size: var(--t-h2);
-      font-weight: 600;
-      letter-spacing: -.022em;
-      text-wrap: balance;
-    }
-    @media (max-width: 46rem) {
-      .grid { grid-template-columns: 1fr; row-gap: 1.4rem }
-      .rail { position: static; flex-direction: row; align-items: baseline; gap: .6rem }
-    }
-
-    /* ---------- hero ---------- */
-    h1 {
-      font-size: var(--t-h1);
-      font-weight: 600;
-      letter-spacing: -.04em;
-      line-height: 1.08;
-      text-wrap: balance;
-      margin-top: .7rem;
-    }
-    .lead {
-      font-size: var(--t-lead);
-      color: var(--ink-2);
-      max-width: 44ch;
-      margin-top: 1.35rem;
-      line-height: 1.7;
-      text-wrap: pretty;
-    }
-    .status {
-      display: inline-flex;
-      align-items: center;
-      gap: .5rem;
-      margin-top: 1.6rem;
-      font-size: var(--t-ui);
-      color: var(--ink-2);
-    }
-    .status::before {
-      content: "";
-      width: .45rem; height: .45rem;
-      border-radius: 50%;
-      background: #2fbf71;
-      box-shadow: 0 0 0 .2rem rgba(47,191,113,.18);
-    }
-    .cta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: .6rem;
-      margin-top: 1.9rem;
-    }
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: .45rem;
-      font-size: var(--t-ui);
-      font-weight: 500;
-      text-decoration: none;
-      padding: .6rem 1.05rem;
-      border-radius: var(--radius);
-      border: 1px solid transparent;
-      transition: background var(--transition), border-color var(--transition),
-                  color var(--transition), transform var(--transition);
-    }
-    .btn svg { width: .9rem; height: .9rem }
-    .btn-primary { background: var(--accent); color: var(--on-accent) }
-    .btn-primary:hover { filter: brightness(1.08); transform: translateY(-1px) }
-    .btn-ghost { border-color: var(--border-2); color: var(--ink-2) }
-    .btn-ghost:hover { border-color: var(--ink); color: var(--ink); transform: translateY(-1px) }
-    .btn:active { transform: translateY(0) scale(.98) }
-
-    /* ---------- work rows ---------- */
-    .rows { border-top: 1px solid var(--border) }
-    .row {
-      display: block;
-      position: relative;
-      padding: 1.15rem 2rem 1.25rem .85rem;
-      margin-inline: -.85rem;
-      border-bottom: 1px solid var(--border);
-      text-decoration: none;
-      border-radius: var(--radius);
-      transition: background var(--transition);
-    }
-    .row:hover { background: var(--surface) }
-    .row-head {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: baseline;
-      justify-content: space-between;
-      gap: .25rem 1rem;
-    }
-    .row-title {
-      font-family: var(--mono);
-      font-size: .95rem;
-      font-weight: 500;
-      letter-spacing: -.01em;
-      transition: color var(--transition);
-    }
-    .row:hover .row-title { color: var(--accent-ink) }
-    .row-meta { font-family: var(--mono); font-size: var(--t-meta); color: var(--ink-3) }
-    .row-desc {
-      color: var(--ink-2);
-      font-size: .95rem;
-      margin-top: .35rem;
-      max-width: 54ch;
-      text-wrap: pretty;
-    }
-    .tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: .35rem;
-      margin-top: .75rem;
-      list-style: none;
-      padding: 0;
-    }
-    .tags li {
-      font-family: var(--mono);
-      font-size: var(--t-meta);
-      color: var(--ink-3);
-      border: 1px solid var(--border);
-      border-radius: 2rem;
-      padding: .1rem .5rem;
-    }
-    .row-arrow {
-      position: absolute;
-      top: 1.3rem; right: .75rem;
-      width: .85rem; height: .85rem;
-      color: var(--ink-3);
-      transition: transform .25s var(--ease), color var(--transition);
-    }
-    .row:hover .row-arrow { color: var(--accent-ink); transform: translate(2px, -2px) }
-
-    .more {
-      display: inline-flex;
-      align-items: center;
-      gap: .4rem;
-      margin-top: 1.15rem;
-      font-size: var(--t-ui);
-      color: var(--ink-2);
-      text-decoration: none;
-      transition: color var(--transition), gap var(--transition);
-    }
-    .more:hover { color: var(--accent-ink); gap: .65rem }
-
-    /* ---------- experience ---------- */
-    .xp { display: grid; grid-template-columns: 8rem minmax(0, 1fr); gap: 0 1.25rem }
-    .xp + .xp { margin-top: 1.9rem; padding-top: 1.9rem; border-top: 1px solid var(--border) }
-    .xp-when {
-      font-family: var(--mono);
-      font-size: var(--t-meta);
-      font-variant-numeric: tabular-nums;
-      color: var(--ink-3);
-      padding-top: .22rem;
-      white-space: nowrap;
-    }
-    .xp-role { font-size: var(--t-body); font-weight: 600; letter-spacing: -.018em }
-    .xp-org { font-size: var(--t-ui); color: var(--ink-2); margin-top: .05rem }
-    .xp-desc {
-      font-size: .95rem;
-      color: var(--ink-2);
-      margin-top: .55rem;
-      max-width: 56ch;
-      text-wrap: pretty;
-    }
-    @media (max-width: 34rem) {
-      .xp { grid-template-columns: 1fr; gap: .35rem }
-      .xp-when { padding-top: 0 }
-    }
-
-    /* ---------- stack ---------- */
-    .stack { display: grid; grid-template-columns: 9.5rem minmax(0, 1fr); gap: .9rem 1.25rem }
-    .stack dt { font-size: var(--t-ui); color: var(--ink-3) }
-    .stack dd { font-size: .95rem; margin: 0; text-wrap: pretty }
-    @media (max-width: 34rem) {
-      .stack { grid-template-columns: 1fr; gap: .25rem }
-      .stack dd + dt { margin-top: .9rem }
-    }
-
-    /* ---------- about ---------- */
-    .prose p { color: var(--ink-2); max-width: 56ch; text-wrap: pretty }
-    .prose p + p { margin-top: 1rem }
-
-    /* ---------- footer ---------- */
-    .site-footer { border-top: 1px solid var(--border) }
-    .footer-inner {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      gap: .9rem 1.5rem;
-      padding-block: 1.75rem;
-      font-size: var(--t-ui);
-      color: var(--ink-3);
-    }
-    .footer-links { display: flex; flex-wrap: wrap; gap: .55rem 1.25rem }
-    .footer-links a {
-      position: relative;
-      color: var(--ink-2);
-      text-decoration: none;
-      padding-block: .1rem;
-      transition: color var(--transition);
-    }
-    .footer-links a::after {
-      content: "";
-      position: absolute;
-      left: 0; bottom: 0;
-      width: 100%; height: 1.5px;
-      background: var(--accent);
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform .28s var(--ease);
-    }
-    .footer-links a:hover,
-    .footer-links a:focus-visible { color: var(--accent-ink) }
-    .footer-links a:hover::after,
-    .footer-links a:focus-visible::after { transform: scaleX(1) }
-    .footer-note { font-size: var(--t-meta) }
-
-    /* ---------- motion ---------- */
-    @keyframes up { from { opacity: 0; transform: translateY(10px) } to { opacity: 1; transform: none } }
-    @keyframes fade { from { opacity: 0 } to { opacity: 1 } }
-    .hero .eyebrow { animation: up .6s .04s var(--ease) backwards }
-    .hero h1       { animation: up .6s .1s  var(--ease) backwards }
-    .hero .lead    { animation: up .6s .18s var(--ease) backwards }
-    .hero .status  { animation: up .6s .26s var(--ease) backwards }
-    .hero .cta     { animation: up .6s .32s var(--ease) backwards }
-
-    /* only hide pre-reveal content when JS can bring it back */
-    .js .reveal { opacity: 0; transform: translateY(12px) }
-    .js .reveal.is-visible {
-      opacity: 1;
-      transform: none;
-      transition: opacity .55s var(--ease), transform .55s var(--ease);
-      transition-delay: calc(var(--i, 0) * 70ms);
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto }
-      *,*::before,*::after { animation: none !important; transition: none !important }
-      .js .reveal { opacity: 1; transform: none }
-    }
-  </style>
-</head>
-<body>
-  <a class="skip" href="#main" data-i18n="a11y.skip">Skip to content</a>
-
-  <header class="site-header">
-    <div class="wrap header-inner">
-      <a class="brand" href="/" aria-label="Cihat Karaboğa — home">karaboga.dev</a>
-
-      <nav class="site-nav" aria-label="Sections">
-        <a href="#work" data-i18n="nav.work">Work</a>
-        <a href="#experience" data-i18n="nav.experience">Experience</a>
-        <a href="#stack" data-i18n="nav.stack">Stack</a>
-        <a href="#about" data-i18n="nav.about">About</a>
-      </nav>
-
-      <div class="header-tools">
-        <div class="lang" role="group" aria-label="Language">
-          <button type="button" data-lang-btn="en" aria-pressed="true">EN</button>
-          <button type="button" data-lang-btn="tr" aria-pressed="false">TR</button>
-        </div>
-        <button class="theme-btn" id="theme-toggle" data-i18n-label="a11y.theme" aria-label="Toggle light/dark theme">
-          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
-          </svg>
-          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <circle cx="12" cy="12" r="5"/>
-            <line x1="12" y1="1" x2="12" y2="3"/>
-            <line x1="12" y1="21" x2="12" y2="23"/>
-            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
-            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
-            <line x1="1" y1="12" x2="3" y2="12"/>
-            <line x1="21" y1="12" x2="23" y2="12"/>
-            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
-            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
-          </svg>
-        </button>
-      </div>
-    </div>
-  </header>
-
-  <main id="main">
-    <!-- hero -->
-    <section class="section hero" aria-labelledby="name">
-      <div class="wrap">
-        <p class="eyebrow" data-i18n="hero.eyebrow">Mobile Software Engineer · Istanbul, Türkiye</p>
-        <h1 id="name">Cihat Karaboğa</h1>
-        <p class="lead" data-i18n="hero.lead">
-          I build fast, clean mobile apps for iOS and Android with Flutter and Dart.
-          5+ years turning ideas into products that ship.
-        </p>
-        <p class="status" data-i18n="hero.status">Open to new work</p>
-        <div class="cta">
-          <a class="btn btn-primary" href="mailto:cihat@karaboga.dev" data-i18n="hero.cta1">Get in touch</a>
-          <a class="btn btn-ghost" href="https://github.com/karabogadev" rel="me noopener noreferrer" target="_blank">
-            GitHub
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M7 17 17 7M8 7h9v9"/>
+        <div class="header-tools">
+          <div
+            class="lang"
+            role="group"
+            data-i18n-label="a11y.language"
+            aria-label="Language"
+          >
+            <button type="button" data-lang-btn="en" aria-pressed="true">
+              EN
+            </button>
+            <button type="button" data-lang-btn="tr" aria-pressed="false">
+              TR
+            </button>
+          </div>
+          <button
+            class="theme-btn"
+            id="theme-toggle"
+            data-i18n-label="a11y.theme"
+            aria-label="Toggle light/dark theme"
+          >
+            <svg
+              class="icon-moon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
             </svg>
-          </a>
+            <svg
+              class="icon-sun"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <circle cx="12" cy="12" r="5" />
+              <line x1="12" y1="1" x2="12" y2="3" />
+              <line x1="12" y1="21" x2="12" y2="23" />
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+              <line x1="1" y1="12" x2="3" y2="12" />
+              <line x1="21" y1="12" x2="23" y2="12" />
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+            </svg>
+          </button>
         </div>
       </div>
-    </section>
+    </header>
 
-    <!-- 01 — selected work -->
-    <section class="section" id="work" aria-labelledby="work-title">
-      <div class="wrap grid">
-        <div class="rail">
-          <span class="rail-num">01</span>
-          <h2 class="rail-label" id="work-title" data-i18n="work.title">Selected work</h2>
-        </div>
-        <div class="rows reveal">
-          <a class="row" href="https://github.com/karabogadev/flutter_app_boilerplate" rel="noopener noreferrer" target="_blank">
-            <div class="row-head">
-              <h3 class="row-title">flutter_app_boilerplate</h3>
-              <span class="row-meta">Dart · 2026</span>
+    <main id="main" tabindex="-1">
+      <section class="section hero" aria-labelledby="name">
+        <div class="wrap">
+          <div class="hero-layout">
+            <div class="hero-copy">
+              <p class="intro">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M20 10c0 6-8 11-8 11S4 16 4 10a8 8 0 1 1 16 0Z" />
+                  <circle cx="12" cy="10" r="2.5" /></svg
+                ><span data-i18n="hero.eyebrow"
+                  >Mobile Software Engineer in Istanbul</span
+                >
+              </p>
+              <h1 id="name"><span>Cihat</span> <span>Karaboğa.</span></h1>
+              <p class="hero-subtitle" data-i18n="hero.subtitle">
+                Thoughtful apps. Solid engineering.
+              </p>
+              <p class="lead" data-i18n="hero.lead">
+                I turn ideas into fast, reliable mobile experiences. 5+ years
+                building with Flutter and Dart, from the first line of code to
+                the App Store.
+              </p>
+              <div class="cta">
+                <a class="btn btn-primary" href="#work"
+                  ><span data-i18n="hero.work">Explore my work</span
+                  ><svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path d="M12 4v16m-6-6 6 6 6-6" /></svg></a
+                ><a class="btn btn-ghost" href="mailto:cihat@karaboga.dev"
+                  ><svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <rect x="3" y="5" width="18" height="14" rx="3" />
+                    <path d="m3 7 9 6 9-6" /></svg
+                  ><span data-i18n="hero.cta1">Get in touch</span></a
+                >
+              </div>
+              <div class="hero-note">
+                <span class="status" data-i18n="hero.status"
+                  >Open to new projects</span
+                ><span data-i18n="hero.platforms"
+                  >Flutter, iOS &amp; Android</span
+                >
+              </div>
             </div>
-            <p class="row-desc" data-i18n="work.1.desc">
-              A production-ready Flutter starter: Clean Architecture, BLoC, offline-first
-              storage on Hive CE, auto_route, Dio and easy_localization.
+            <figure class="studio" data-platform="ios">
+              <div class="studio-top">
+                <span data-i18n="studio.title"
+                  >One codebase. Two platforms.</span
+                >
+                <div
+                  class="platform-switch"
+                  role="group"
+                  data-i18n-label="a11y.platform"
+                  aria-label="Device preview"
+                >
+                  <button
+                    type="button"
+                    data-platform-btn="ios"
+                    aria-pressed="true"
+                  >
+                    iOS</button
+                  ><button
+                    type="button"
+                    data-platform-btn="android"
+                    aria-pressed="false"
+                  >
+                    Android
+                  </button>
+                </div>
+              </div>
+              <div class="device-scene" aria-hidden="true">
+                <div class="orbit"></div>
+                <div class="phone">
+                  <div class="phone-screen">
+                    <div class="phone-top">
+                      <span>9:41</span>
+                      <div class="phone-island"></div>
+                      <div class="phone-bars"><i></i><i></i><i></i></div>
+                    </div>
+                    <div class="app-heading">
+                      Sağlıklı Sürüş<svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.8"
+                      >
+                        <path d="M12 3 4 6v6c0 5 8 9 8 9s8-4 8-9V6Z" />
+                        <path d="m8 12 3 3 5-6" />
+                      </svg>
+                    </div>
+                    <p class="app-greeting" data-i18n="studio.greeting">
+                      A little care. Every journey.
+                    </p>
+                    <div class="pulse">
+                      <svg viewBox="0 0 150 150" fill="none">
+                        <circle
+                          cx="75"
+                          cy="75"
+                          r="65"
+                          stroke="#e5eafa"
+                          stroke-width="7"
+                        />
+                        <circle
+                          cx="75"
+                          cy="75"
+                          r="65"
+                          stroke="#5474e6"
+                          stroke-width="7"
+                          stroke-dasharray="310 410"
+                          stroke-linecap="round"
+                        />
+                      </svg>
+                      <div class="pulse-reading">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                          <path
+                            d="M12 21 3.5 12.5C-3 6 6-1 12 5c6-6 15 1 8.5 7.5Z"
+                          /></svg
+                        ><strong>72</strong
+                        ><span data-i18n="studio.bpm">beats / min</span>
+                      </div>
+                    </div>
+                    <div class="app-health" data-i18n="studio.health">
+                      You're in a healthy rhythm
+                    </div>
+                    <div class="app-trip">
+                      <div class="app-trip-title">
+                        <span data-i18n="studio.trip">Your journey</span
+                        ><span>24 min</span>
+                      </div>
+                      <svg viewBox="0 0 150 30" fill="none">
+                        <path
+                          d="M0 19h20l4-4 5 9 7-21 7 24 6-10h16l4-5 6 8 5-15 5 20 6-8h14l5-5 5 7 6-4h29"
+                          stroke="#5474e6"
+                          stroke-width="1.7"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </div>
+                    <div class="app-tabbar">
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.8"
+                      >
+                        <path d="m3 10 9-7 9 7v10H3Z" />
+                        <path d="M9 20v-7h6v7" /></svg
+                      ><svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.8"
+                      >
+                        <path d="M4 20V10m8 10V4m8 16V8" /></svg
+                      ><svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.8"
+                      >
+                        <circle cx="12" cy="8" r="4" />
+                        <path d="M4 22v-3a8 8 0 0 1 16 0v3" />
+                      </svg>
+                    </div>
+                    <div class="home-indicator"></div>
+                  </div>
+                </div>
+                <div class="studio-chip chip-flutter">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="m14 2-12 12 4 4L22 2Zm0 11-7 7 4 4h8l-8-8 3-3Zm4-4-7 7 4 4 11-11Z"
+                      transform="translate(1 0) scale(.85)"
+                    /></svg
+                  ><span data-i18n="studio.flutter">Built with Flutter</span>
+                </div>
+                <div class="studio-chip chip-platform">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                  >
+                    <rect x="6" y="2" width="12" height="20" rx="3" />
+                    <path d="M10 18h4" /></svg
+                  ><span>iOS &amp; Android</span>
+                </div>
+              </div>
+              <figcaption class="studio-caption" data-i18n="studio.caption">
+                Sağlıklı Sürüş · Interface study, sample data
+              </figcaption>
+            </figure>
+          </div>
+          <div class="trusted">
+            <p class="trusted-label" data-i18n="hero.companies">
+              Previously &amp; currently building at
             </p>
-            <ul class="tags"><li>Flutter</li><li>BLoC</li><li>Hive CE</li><li>Dio</li></ul>
-            <svg class="row-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M7 17 17 7M8 7h9v9"/>
-            </svg>
-          </a>
-
-          <a class="row" href="https://github.com/karabogadev/traffic_racer" rel="noopener noreferrer" target="_blank">
-            <div class="row-head">
-              <h3 class="row-title">traffic_racer</h3>
-              <span class="row-meta">Dart · 2025</span>
+            <div
+              class="companies"
+              aria-label="Altur Teknoloji, Bookcars.com, Yolcu360, KB Yazılım"
+            >
+              <span>altur teknoloji</span
+              ><span class="company-bookcars">bookcars.com</span
+              ><span>yolcu360</span><span>KB Yazılım</span>
             </div>
-            <p class="row-desc" data-i18n="work.2.desc">
-              An endless traffic racing game built with Flutter on the Flame engine.
+          </div>
+        </div>
+      </section>
+      <section class="section" id="work" aria-labelledby="work-title">
+        <div class="wrap">
+          <div class="section-heading">
+            <div>
+              <h2 id="work-title" data-i18n="work.title">Selected work</h2>
+              <p class="section-intro" data-i18n="work.intro">
+                Open-source projects, experiments, and things I make my own.
+              </p>
+            </div>
+            <a
+              class="more"
+              href="https://github.com/karabogadev?tab=repositories"
+              target="_blank"
+              rel="noopener noreferrer"
+              ><span data-i18n="work.more">More on GitHub</span
+              ><svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M7 17 17 7M7 7h10v10" /></svg
+            ></a>
+          </div>
+          <div class="project-grid">
+            <a
+              class="project"
+              href="https://github.com/karabogadev/flutter_app_boilerplate"
+              target="_blank"
+              rel="noopener noreferrer"
+              ><div class="project-art art-code" aria-hidden="true">
+                <div class="code-window">
+                  <div class="window-toolbar">
+                    <i></i><i></i><i></i><span>flutter_app_boilerplate</span>
+                  </div>
+                  <div class="code-content">
+                    <span class="code-muted">// A place for everything.</span
+                    ><br /><span class="code-blue">lib/</span><br />&nbsp; ├─
+                    core/<br />&nbsp; ├─ features/<br />&nbsp; │&nbsp; ├─
+                    data/<br />&nbsp; │&nbsp; ├─ domain/<br />&nbsp; │&nbsp; └─
+                    presentation/<br />&nbsp; └─
+                    <span class="code-blue">main.dart</span>
+                  </div>
+                </div>
+              </div>
+              <div class="project-body">
+                <p class="project-category">
+                  <span data-i18n="work.1.category">Developer tooling</span> /
+                  2026
+                </p>
+                <div class="project-title">
+                  <h3>Flutter App Boilerplate</h3>
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path d="M7 17 17 7M7 7h10v10" />
+                  </svg>
+                </div>
+                <p class="project-desc" data-i18n="work.1.desc">
+                  A considered starting point for your next app. Clean
+                  Architecture, BLoC, and offline-first storage, ready to build
+                  on.
+                </p>
+                <ul class="tags">
+                  <li>Flutter</li>
+                  <li>BLoC</li>
+                  <li>Hive CE</li>
+                </ul>
+              </div></a
+            ><a
+              class="project"
+              href="https://github.com/karabogadev/traffic_racer"
+              target="_blank"
+              rel="noopener noreferrer"
+              ><div class="project-art art-game" aria-hidden="true">
+                <div class="game-tree"></div>
+                <div class="game-tree tree-two"></div>
+                <div class="road">
+                  <div class="car car-main"></div>
+                  <div class="car car-other"></div>
+                  <div class="car car-third"></div>
+                </div>
+              </div>
+              <div class="project-body">
+                <p class="project-category">
+                  <span data-i18n="work.2.category">Game development</span> /
+                  2025
+                </p>
+                <div class="project-title">
+                  <h3>Traffic Racer</h3>
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path d="M7 17 17 7M7 7h10v10" />
+                  </svg>
+                </div>
+                <p class="project-desc" data-i18n="work.2.desc">
+                  An endless road, built with Flutter. Exploring real-time
+                  gameplay and the Flame game engine.
+                </p>
+                <ul class="tags">
+                  <li>Flutter</li>
+                  <li>Flame</li>
+                  <li>Dart</li>
+                </ul>
+              </div></a
+            ><a
+              class="project"
+              href="https://github.com/karabogadev/karaboga.dev"
+              target="_blank"
+              rel="noopener noreferrer"
+              ><div class="project-art art-web" aria-hidden="true">
+                <div class="mini-site">
+                  <div class="mini-header">
+                    <span>karaboga.dev</span>
+                    <div class="mini-dots"><i></i><i></i><i></i></div>
+                  </div>
+                  <div class="mini-body">
+                    <div>
+                      <div class="mini-name">Cihat<br />Karaboğa.</div>
+                      <div class="mini-lines"></div>
+                      <div class="mini-button"></div>
+                    </div>
+                    <div class="mini-visual">
+                      <div class="mini-device"></div>
+                    </div>
+                  </div>
+                  <div class="mini-bottom"><i></i><i></i><i></i></div>
+                </div>
+              </div>
+              <div class="project-body">
+                <p class="project-category">
+                  <span data-i18n="work.3.category">Personal website</span> /
+                  2026
+                </p>
+                <div class="project-title">
+                  <h3>karaboga.dev</h3>
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path d="M7 17 17 7M7 7h10v10" />
+                  </svg>
+                </div>
+                <p class="project-desc" data-i18n="work.3.desc">
+                  A small, fast home on the web. Two languages, two themes, and
+                  an emphasis on the details.
+                </p>
+                <ul class="tags">
+                  <li>HTML</li>
+                  <li>CSS</li>
+                  <li>JavaScript</li>
+                </ul>
+              </div></a
+            >
+          </div>
+        </div>
+      </section>
+      <section
+        class="section experience"
+        id="experience"
+        aria-labelledby="experience-title"
+      >
+        <div class="wrap split">
+          <div class="section-aside">
+            <h2 id="experience-title" data-i18n="xp.title">
+              Built on experience.
+            </h2>
+            <p class="section-intro" data-i18n="xp.intro">
+              From the first architecture decision to the next release. Taking
+              ownership, every step of the way.
             </p>
-            <ul class="tags"><li>Flutter</li><li>Flame</li><li>Game loop</li></ul>
-            <svg class="row-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M7 17 17 7M8 7h9v9"/>
-            </svg>
-          </a>
-
-          <a class="row" href="https://github.com/karabogadev/karaboga.dev" rel="noopener noreferrer" target="_blank">
-            <div class="row-head">
-              <h3 class="row-title">karaboga.dev</h3>
-              <span class="row-meta">HTML · 2026</span>
+            <a
+              class="more"
+              href="https://www.linkedin.com/in/karabogadev/"
+              target="_blank"
+              rel="me noopener noreferrer"
+              ><span data-i18n="xp.more">Find me on LinkedIn</span
+              ><svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M7 17 17 7M7 7h10v10" /></svg
+            ></a>
+          </div>
+          <div class="timeline">
+            <article class="xp">
+              <div class="xp-when" data-i18n="xp.1.when">2025 — Present</div>
+              <div>
+                <h3 class="xp-role" data-i18n="xp.1.role">Mobile Developer</h3>
+                <div class="xp-org">Altur Teknoloji</div>
+                <p class="xp-desc" data-i18n="xp.1.desc">
+                  Sole developer of Sağlıklı Sürüş — a Flutter app backed by a
+                  .NET service and a Vue.js dashboard, with real-time driver
+                  heart-rate monitoring. Owned the architecture from concept to
+                  launch.
+                </p>
+              </div>
+            </article>
+            <article class="xp">
+              <div class="xp-when" data-i18n="xp.2.when">2023 — 2024</div>
+              <div>
+                <h3 class="xp-role" data-i18n="xp.2.role">Mobile Developer</h3>
+                <div class="xp-org">Bookcars.com</div>
+                <p class="xp-desc" data-i18n="xp.2.desc">
+                  One flavor-based Flutter codebase shipping to iOS, Android and
+                  Huawei, with Strapi CMS, Stripe, Google Maps, push and App
+                  Clip / Instant App. Booking time dropped under 30 seconds at
+                  99.5% crash-free sessions, released one-click through GitHub
+                  Actions.
+                </p>
+              </div>
+            </article>
+            <article class="xp">
+              <div class="xp-when" data-i18n="xp.3.when">2022 — 2024</div>
+              <div>
+                <h3 class="xp-role" data-i18n="xp.3.role">Mobile Developer</h3>
+                <div class="xp-org">Yolcu360</div>
+                <p class="xp-desc" data-i18n="xp.3.desc">
+                  Push notifications, REST integrations and deep linking
+                  (Universal Links &amp; App Links). A marketing-tool
+                  integration lifted daily active users 20% and revenue 15%,
+                  holding 99%+ crash-free sessions across 10k+ DAU.
+                </p>
+              </div>
+            </article>
+            <article class="xp">
+              <div class="xp-when" data-i18n="xp.4.when">2021 — 2022</div>
+              <div>
+                <h3 class="xp-role" data-i18n="xp.4.role">
+                  Jr. Mobile Developer
+                </h3>
+                <div class="xp-org">KB Yazılım</div>
+                <p class="xp-desc" data-i18n="xp.4.desc">
+                  Built two B2B Flutter apps for Dynobil Ekspertiz end to end —
+                  architecture through store release — serving 5,000+ daily
+                  sessions at under 1% crash rate.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+      <div class="section">
+        <div class="wrap about-stack">
+          <section id="about" aria-labelledby="about-title">
+            <h2 id="about-title" data-i18n="about.title">A little about me.</h2>
+            <div class="prose">
+              <p data-i18n="about.p1">
+                I'm a mobile engineer based in Istanbul. Since 2021 I've shipped
+                cross-platform apps across car rental, B2B vehicle inspection
+                and driver safety — often as the only mobile developer on the
+                project, from architecture through store release.
+              </p>
+              <p data-i18n="about.p2">
+                What I care about is boring releases: apps that stay fast, don't
+                crash, and go out on a pipeline nobody has to babysit. I studied
+                Software Engineering at Fırat University (2018–2023).
+              </p>
             </div>
-            <p class="row-desc" data-i18n="work.3.desc">
-              This site. One static HTML file with inline CSS — no framework, no build step.
+            <p class="about-location">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M20 10c0 6-8 11-8 11S4 16 4 10a8 8 0 1 1 16 0Z" />
+                <circle cx="12" cy="10" r="2.5" /></svg
+              ><span data-i18n="about.location"
+                >Based in Istanbul, Türkiye</span
+              >
             </p>
-            <ul class="tags"><li>HTML</li><li>CSS</li><li>a11y</li></ul>
-            <svg class="row-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M7 17 17 7M8 7h9v9"/>
-            </svg>
-          </a>
-
-          <a class="more" href="https://github.com/karabogadev?tab=repositories" rel="noopener noreferrer" target="_blank">
-            <span data-i18n="work.more">All repositories</span>
-            <span aria-hidden="true">→</span>
-          </a>
+          </section>
+          <section id="stack" aria-labelledby="stack-title">
+            <h2 id="stack-title" data-i18n="stack.title">
+              Tools of the trade.
+            </h2>
+            <dl class="stack">
+              <div class="stack-group">
+                <dt data-i18n="stack.1">Languages</dt>
+                <dd>
+                  <span>Dart</span><span>Swift</span><span>Kotlin</span
+                  ><span>Java</span><span>C#</span><span>JavaScript</span>
+                </dd>
+              </div>
+              <div class="stack-group">
+                <dt data-i18n="stack.2">Mobile</dt>
+                <dd>
+                  <span>Flutter</span><span>iOS</span><span>Android</span
+                  ><span>Huawei</span>
+                </dd>
+              </div>
+              <div class="stack-group">
+                <dt data-i18n="stack.3">Architecture</dt>
+                <dd>
+                  <span>BLoC</span><span>Riverpod</span><span>Provider</span
+                  ><span>GetX</span><span>MobX</span
+                  ><span>Clean Architecture</span><span>MVVM</span>
+                </dd>
+              </div>
+              <div class="stack-group">
+                <dt data-i18n="stack.4">Backend &amp; data</dt>
+                <dd>
+                  <span>Firebase</span><span>REST</span><span>Dio</span
+                  ><span>Hive CE</span><span>Strapi</span><span>Stripe</span
+                  ><span>.NET</span>
+                </dd>
+              </div>
+              <div class="stack-group">
+                <dt data-i18n="stack.5">Delivery</dt>
+                <dd>
+                  <span>GitHub Actions</span><span>CI/CD</span
+                  ><span>Unit testing</span><span>Git</span>
+                </dd>
+              </div>
+            </dl>
+          </section>
         </div>
       </div>
-    </section>
-
-    <!-- 02 — experience -->
-    <section class="section" id="experience" aria-labelledby="experience-title">
-      <div class="wrap grid">
-        <div class="rail">
-          <span class="rail-num">02</span>
-          <h2 class="rail-label" id="experience-title" data-i18n="xp.title">Experience</h2>
+      <section
+        class="contact-section"
+        id="contact"
+        aria-labelledby="contact-title"
+      >
+        <div class="wrap">
+          <div class="contact-panel">
+            <div>
+              <h2 id="contact-title" data-i18n="contact.title">
+                Have something in mind?
+              </h2>
+              <p data-i18n="contact.desc">
+                A new app, a tricky problem, or just a hello. I'd love to hear
+                about it.
+              </p>
+            </div>
+            <div class="contact-actions">
+              <a
+                class="email-link"
+                id="contact-email"
+                href="mailto:cihat@karaboga.dev"
+                >cihat@karaboga.dev</a
+              >
+              <div class="contact-buttons">
+                <a class="btn btn-primary" href="mailto:cihat@karaboga.dev"
+                  ><svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <rect x="3" y="5" width="18" height="14" rx="3" />
+                    <path d="m3 7 9 6 9-6" /></svg
+                  ><span data-i18n="contact.send">Write an email</span></a
+                ><button
+                  class="copy-btn"
+                  id="copy-email"
+                  data-copy-target="contact-email"
+                  type="button"
+                  aria-describedby="contact-email"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <rect x="8" y="8" width="12" height="13" rx="2" />
+                    <path
+                      d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"
+                    /></svg
+                  ><span data-i18n="contact.copy">Copy address</span>
+                </button>
+              </div>
+              <div class="secondary-email">
+                <span class="email-label" data-i18n="contact.alternative"
+                  >You can also reach me at</span
+                >
+                <div class="email-row">
+                  <a
+                    class="email-link"
+                    id="contact-email-secondary"
+                    href="mailto:cihattkaraboga@gmail.com"
+                    >cihattkaraboga@gmail.com</a
+                  >
+                  <button
+                    class="copy-btn"
+                    type="button"
+                    data-copy-target="contact-email-secondary"
+                    aria-describedby="contact-email-secondary"
+                    data-i18n-label="a11y.copySecondary"
+                    aria-label="Copy alternate email address"
+                  >
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.8"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                    >
+                      <rect x="8" y="8" width="12" height="13" rx="2" />
+                      <path
+                        d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <div
+                class="copy-status"
+                id="copy-status"
+                role="status"
+                aria-live="polite"
+                aria-atomic="true"
+              ></div>
+            </div>
+          </div>
         </div>
-        <div>
-          <article class="xp reveal" style="--i:0">
-            <div class="xp-when" data-i18n="xp.1.when">2025 — Present</div>
-            <div>
-              <h3 class="xp-role" data-i18n="xp.1.role">Mobile Developer</h3>
-              <div class="xp-org">Altur Teknoloji</div>
-              <p class="xp-desc" data-i18n="xp.1.desc">
-                Sole developer of Sağlıklı Sürüş — a Flutter app backed by a .NET service
-                and a Vue.js dashboard, with real-time driver heart-rate monitoring.
-                Owned the architecture from concept to launch.
-              </p>
-            </div>
-          </article>
-
-          <article class="xp reveal" style="--i:1">
-            <div class="xp-when" data-i18n="xp.2.when">2023 — 2024</div>
-            <div>
-              <h3 class="xp-role" data-i18n="xp.2.role">Mobile Developer</h3>
-              <div class="xp-org">Bookcars.com</div>
-              <p class="xp-desc" data-i18n="xp.2.desc">
-                One flavor-based Flutter codebase shipping to iOS, Android and Huawei,
-                with Strapi CMS, Stripe, Google Maps, push and App Clip / Instant App.
-                Booking time dropped under 30 seconds at 99.5% crash-free sessions,
-                released one-click through GitHub Actions.
-              </p>
-            </div>
-          </article>
-
-          <article class="xp reveal" style="--i:2">
-            <div class="xp-when" data-i18n="xp.3.when">2022 — 2024</div>
-            <div>
-              <h3 class="xp-role" data-i18n="xp.3.role">Mobile Developer</h3>
-              <div class="xp-org">Yolcu360</div>
-              <p class="xp-desc" data-i18n="xp.3.desc">
-                Push notifications, REST integrations and deep linking (Universal Links
-                &amp; App Links). A marketing-tool integration lifted daily active users
-                20% and revenue 15%, holding 99%+ crash-free sessions across 10k+ DAU.
-              </p>
-            </div>
-          </article>
-
-          <article class="xp reveal" style="--i:3">
-            <div class="xp-when" data-i18n="xp.4.when">2021 — 2022</div>
-            <div>
-              <h3 class="xp-role" data-i18n="xp.4.role">Jr. Mobile Developer</h3>
-              <div class="xp-org">KB Yazılım</div>
-              <p class="xp-desc" data-i18n="xp.4.desc">
-                Built two B2B Flutter apps for Dynobil Ekspertiz end to end — architecture
-                through store release — serving 5,000+ daily sessions at under 1% crash rate.
-              </p>
-            </div>
-          </article>
-        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="wrap footer-inner">
+        <span class="footer-note" data-i18n="footer.note"
+          >© 2026 Cihat Karaboğa. Made with intention.</span
+        >
+        <nav
+          class="footer-links"
+          data-i18n-label="a11y.social"
+          aria-label="Social profiles"
+        >
+          <a
+            href="https://github.com/karabogadev"
+            rel="me noopener noreferrer"
+            target="_blank"
+            >GitHub
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M7 17 17 7M7 7h10v10" /></svg></a
+          ><a
+            href="https://www.linkedin.com/in/karabogadev/"
+            rel="me noopener noreferrer"
+            target="_blank"
+            >LinkedIn
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M7 17 17 7M7 7h10v10" /></svg></a
+          ><a
+            href="https://x.com/karabogadev"
+            rel="me noopener noreferrer"
+            target="_blank"
+            >X
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M7 17 17 7M7 7h10v10" /></svg></a
+          ><a href="#main"
+            ><span data-i18n="footer.top">Back to top</span
+            ><svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M12 20V4m-6 6 6-6 6 6" /></svg
+          ></a>
+        </nav>
       </div>
-    </section>
+    </footer>
 
-    <!-- 03 — stack -->
-    <section class="section" id="stack" aria-labelledby="stack-title">
-      <div class="wrap grid">
-        <div class="rail">
-          <span class="rail-num">03</span>
-          <h2 class="rail-label" id="stack-title" data-i18n="stack.title">Stack</h2>
-        </div>
-        <dl class="stack reveal">
-          <dt data-i18n="stack.1">Languages</dt>
-          <dd>Dart · Swift · Kotlin · Java · C# · JavaScript</dd>
-          <dt data-i18n="stack.2">Mobile</dt>
-          <dd>Flutter · iOS · Android · Huawei</dd>
-          <dt data-i18n="stack.3">State &amp; architecture</dt>
-          <dd>BLoC · Riverpod · Provider · GetX · MobX · Clean Architecture · MVVM</dd>
-          <dt data-i18n="stack.4">Backend &amp; data</dt>
-          <dd>Firebase · REST · Dio · Hive CE · Strapi · Stripe · .NET</dd>
-          <dt data-i18n="stack.5">Delivery</dt>
-          <dd>GitHub Actions · CI/CD · Unit testing · Git</dd>
-        </dl>
-      </div>
-    </section>
+    <script>
+      (function () {
+        var html = document.documentElement;
 
-    <!-- 04 — about -->
-    <section class="section" id="about" aria-labelledby="about-title">
-      <div class="wrap grid">
-        <div class="rail">
-          <span class="rail-num">04</span>
-          <h2 class="rail-label" id="about-title" data-i18n="about.title">About</h2>
-        </div>
-        <div class="prose reveal">
-          <p data-i18n="about.p1">
-            I'm a mobile engineer based in Istanbul. Since 2021 I've shipped cross-platform
-            apps across car rental, B2B vehicle inspection and driver safety — often as the
-            only mobile developer on the project, from architecture through store release.
-          </p>
-          <p data-i18n="about.p2">
-            What I care about is boring releases: apps that stay fast, don't crash, and go
-            out on a pipeline nobody has to babysit. I studied Software Engineering at
-            Fırat University (2018–2023).
-          </p>
-        </div>
-      </div>
-    </section>
-  </main>
+        /* ---------- theme ---------- */
+        var themeMeta = document.getElementById("theme-color");
+        var themeChosen = false;
+        document
+          .getElementById("theme-toggle")
+          .addEventListener("click", function () {
+            themeChosen = true;
+            var next =
+              html.getAttribute("data-theme") === "dark" ? "light" : "dark";
+            html.setAttribute("data-theme", next);
+            try {
+              localStorage.setItem("theme", next);
+            } catch (_) {}
+            if (themeMeta)
+              themeMeta.content = next === "dark" ? "#101522" : "#f7f8fc";
+          });
 
-  <footer class="site-footer">
-    <div class="wrap footer-inner">
-      <nav class="footer-links" aria-label="Elsewhere">
-        <a href="mailto:cihat@karaboga.dev">cihat@karaboga.dev</a>
-        <a href="https://github.com/karabogadev" rel="me noopener noreferrer" target="_blank">GitHub</a>
-        <a href="https://www.linkedin.com/in/karabogadev/" rel="me noopener noreferrer" target="_blank">LinkedIn</a>
-        <a href="https://x.com/karabogadev" rel="me noopener noreferrer" target="_blank">X</a>
-      </nav>
-      <span class="footer-note" data-i18n="footer.note">© 2026 Cihat Karaboğa — one static file, no build step</span>
-    </div>
-  </footer>
-
-  <script>
-    (function () {
-      var html = document.documentElement;
-
-      /* ---------- theme ---------- */
-      var themeMeta = document.getElementById('theme-color');
-      document.getElementById('theme-toggle').addEventListener('click', function () {
-        var next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-        html.setAttribute('data-theme', next);
-        localStorage.setItem('theme', next);
-        if (themeMeta) themeMeta.content = next === 'dark' ? '#0e0e0d' : '#fbfbfa';
-      });
-
-      /* ---------- language ----------
+        /* ---------- language ----------
          The markup ships in English so crawlers index a complete English page;
          Turkish is applied on top from this dictionary. Every value is plain
          text set via textContent — no markup, no innerHTML. */
-      var STRINGS = {
-        tr: {
-          'meta.title': 'Cihat Karaboğa — Mobil Yazılım Mühendisi & Flutter Geliştirici',
-          'meta.desc': 'Cihat Karaboğa, İstanbul’da 5+ yıldır Flutter ve Dart ile hızlı ve güvenilir iOS ve Android uygulamaları geliştiren bir mobil yazılım mühendisi.',
-          'a11y.skip': 'İçeriğe geç',
-          'a11y.theme': 'Açık/koyu temayı değiştir',
-          'nav.work': 'İşler',
-          'nav.experience': 'Deneyim',
-          'nav.stack': 'Teknolojiler',
-          'nav.about': 'Hakkımda',
-          'hero.eyebrow': 'Mobil Yazılım Mühendisi · İstanbul, Türkiye',
-          'hero.lead': 'Flutter ve Dart ile iOS ve Android için hızlı, temiz mobil uygulamalar geliştiriyorum. 5+ yıldır fikirleri gerçekten yayına çıkan ürünlere dönüştürüyorum.',
-          'hero.status': 'Yeni projelere açığım',
-          'hero.cta1': 'İletişime geç',
-          'work.title': 'Seçili işler',
-          'work.1.desc': 'Üretime hazır bir Flutter başlangıç şablonu: Clean Architecture, BLoC, Hive CE ile offline-first depolama, auto_route, Dio ve easy_localization.',
-          'work.2.desc': 'Flame oyun motoru üzerinde Flutter ile yazılmış sonsuz trafik yarışı oyunu.',
-          'work.3.desc': 'Şu an baktığın site. Inline CSS’li tek statik HTML dosyası — framework yok, build adımı yok.',
-          'work.more': 'Tüm repolar',
-          'xp.title': 'Deneyim',
-          'xp.1.when': '2025 — Halen',
-          'xp.1.role': 'Mobil Geliştirici',
-          'xp.1.desc': 'Sağlıklı Sürüş’ün tek geliştiricisi — .NET servisi ve Vue.js paneliyle çalışan, sürücünün kalp atışını gerçek zamanlı izleyen bir Flutter uygulaması. Mimarisini fikirden yayına kadar üstlendim.',
-          'xp.2.when': '2023 — 2024',
-          'xp.2.role': 'Mobil Geliştirici',
-          'xp.2.desc': 'Tek flavor tabanlı Flutter kod tabanından iOS, Android ve Huawei’ye çıkan uygulama; Strapi CMS, Stripe, Google Maps, push ve App Clip / Instant App entegrasyonlarıyla. Rezervasyon süresi %99,5 crash-free oturumla birlikte 30 saniyenin altına indi; sürümler GitHub Actions üzerinden tek tıkla çıktı.',
-          'xp.3.when': '2022 — 2024',
-          'xp.3.role': 'Mobil Geliştirici',
-          'xp.3.desc': 'Push bildirimleri, REST entegrasyonları ve deep linking (Universal Links & App Links). Bir pazarlama aracı entegrasyonu günlük aktif kullanıcıyı %20, geliri %15 artırdı; 10 binin üzerinde DAU’da %99+ crash-free oturum korundu.',
-          'xp.4.when': '2021 — 2022',
-          'xp.4.role': 'Jr. Mobil Geliştirici',
-          'xp.4.desc': 'Dynobil Ekspertiz için iki B2B Flutter uygulamasını mimariden mağaza yayınına kadar baştan sona geliştirdim; günlük 5.000+ oturumda %1’in altında çökme oranı.',
-          'stack.title': 'Teknolojiler',
-          'stack.1': 'Diller',
-          'stack.2': 'Mobil',
-          'stack.3': 'State & mimari',
-          'stack.4': 'Backend & veri',
-          'stack.5': 'Sürüm & test',
-          'about.title': 'Hakkımda',
-          'about.p1': 'İstanbul’da çalışan bir mobil mühendisim. 2021’den beri araç kiralama, B2B ekspertiz ve sürücü güvenliği alanlarında cross-platform uygulamalar yayınladım — çoğu zaman projenin tek mobil geliştiricisi olarak, mimariden mağaza yayınına kadar.',
-          'about.p2': 'Önemsediğim şey sıkıcı sürümler: hızlı kalan, çökmeyen ve kimsenin başında beklemek zorunda olmadığı bir pipeline’dan çıkan uygulamalar. Fırat Üniversitesi’nde Yazılım Mühendisliği okudum (2018–2023).',
-          'footer.note': '© 2026 Cihat Karaboğa — tek statik dosya, build adımı yok'
-        }
-      };
+        var STRINGS = {
+          tr: {
+            "contact.alternative": "Bu adresten de ulaşabilirsin",
+            "a11y.copySecondary": "İkinci e-posta adresini kopyala",
+            "studio.flutter": "Flutter ile geliştirildi",
+            "footer.top": "Başa dön",
+            "contact.copy": "Adresi kopyala",
+            "contact.send": "E-posta gönder",
+            "contact.desc":
+              "Yeni bir uygulama, zor bir problem ya da sadece bir merhaba. Konuşalım.",
+            "contact.title": "Aklında bir proje mi var?",
+            "about.location": "İstanbul, Türkiye",
+            "xp.more": "LinkedIn profilime göz at",
+            "xp.intro":
+              "İlk mimari karardan bir sonraki sürüme kadar. Her adımda sorumluluk alarak.",
+            "work.3.category": "Kişisel web sitesi",
+            "work.2.category": "Oyun geliştirme",
+            "work.1.category": "Geliştirici araçları",
+            "work.intro":
+              "Açık kaynak projeler, denemeler ve kendi imzamı taşıyan işler.",
+            "studio.caption":
+              "Sağlıklı Sürüş · Arayüz çalışması, örnek veriler",
+            "studio.trip": "Yolculuğun",
+            "studio.health": "Kalp ritmin normal aralıkta",
+            "studio.bpm": "atım / dk",
+            "studio.greeting": "Her yolculukta, sağlıkla.",
+            "studio.title": "Tek kod tabanı. İki platform.",
+            "hero.companies": "Birlikte çalıştığım ekipler",
+            "hero.platforms": "Flutter, iOS ve Android",
+            "hero.work": "Projelerimi keşfet",
+            "hero.subtitle": "Özenle tasarlanmış, sağlam temelli uygulamalar.",
+            "nav.contact": "İletişim",
+            "a11y.social": "Sosyal profiller",
+            "a11y.platform": "Cihaz önizlemesi",
+            "a11y.language": "Dil",
+            "a11y.nav": "Sayfa bölümleri",
+            "a11y.home": "Cihat Karaboğa — ana sayfa",
+            "meta.title":
+              "Cihat Karaboğa — Mobil Yazılım Mühendisi & Flutter Geliştirici",
+            "meta.desc":
+              "Cihat Karaboğa, İstanbul’da 5+ yıldır Flutter ve Dart ile hızlı ve güvenilir iOS ve Android uygulamaları geliştiren bir mobil yazılım mühendisi.",
+            "a11y.skip": "İçeriğe geç",
+            "a11y.theme": "Açık/koyu temayı değiştir",
+            "nav.work": "Projeler",
+            "nav.experience": "Deneyim",
+            "nav.about": "Hakkımda",
+            "hero.eyebrow": "İstanbul’da mobil yazılım mühendisi",
+            "hero.lead":
+              "Fikirleri hızlı ve güvenilir mobil deneyimlere dönüştürüyorum. 5+ yıldır Flutter ve Dart ile ilk satır koddan mağaza yayınına kadar geliştiriyorum.",
+            "hero.status": "Yeni projelere açığım",
+            "hero.cta1": "İletişime geç",
+            "work.title": "Seçili projeler",
+            "work.1.desc":
+              "Bir sonraki uygulaman için sağlam bir başlangıç. Clean Architecture, BLoC ve çevrimdışı öncelikli depolamayla geliştirmeye hazır.",
+            "work.2.desc":
+              "Flutter ile sonsuz bir yol. Flame oyun motoruyla gerçek zamanlı oyun deneyimi üzerine bir çalışma.",
+            "work.3.desc":
+              "İnternette sade ve hızlı bir kişisel alan. İki dil, iki tema ve ayrıntılara gösterilen özen.",
+            "work.more": "GitHub’da daha fazlası",
+            "xp.title": "Deneyimle şekillenen işler.",
+            "xp.1.when": "2025 — Halen",
+            "xp.1.role": "Mobil Geliştirici",
+            "xp.1.desc":
+              "Sağlıklı Sürüş’ün tek geliştiricisi — .NET servisi ve Vue.js paneliyle çalışan, sürücünün kalp atışını gerçek zamanlı izleyen bir Flutter uygulaması. Mimarisini fikirden yayına kadar üstlendim.",
+            "xp.2.when": "2023 — 2024",
+            "xp.2.role": "Mobil Geliştirici",
+            "xp.2.desc":
+              "Tek flavor tabanlı Flutter kod tabanından iOS, Android ve Huawei’ye çıkan uygulama; Strapi CMS, Stripe, Google Maps, push ve App Clip / Instant App entegrasyonlarıyla. Rezervasyon süresi %99,5 crash-free oturumla birlikte 30 saniyenin altına indi; sürümler GitHub Actions üzerinden tek tıkla çıktı.",
+            "xp.3.when": "2022 — 2024",
+            "xp.3.role": "Mobil Geliştirici",
+            "xp.3.desc":
+              "Push bildirimleri, REST entegrasyonları ve deep linking (Universal Links & App Links). Bir pazarlama aracı entegrasyonu günlük aktif kullanıcıyı %20, geliri %15 artırdı; 10 binin üzerinde DAU’da %99+ crash-free oturum korundu.",
+            "xp.4.when": "2021 — 2022",
+            "xp.4.role": "Jr. Mobil Geliştirici",
+            "xp.4.desc":
+              "Dynobil Ekspertiz için iki B2B Flutter uygulamasını mimariden mağaza yayınına kadar baştan sona geliştirdim; günlük 5.000+ oturumda %1’in altında çökme oranı.",
+            "stack.title": "Kullandığım teknolojiler.",
+            "stack.1": "Diller",
+            "stack.2": "Mobil",
+            "stack.3": "Mimari",
+            "stack.4": "Backend & veri",
+            "stack.5": "Sürüm & test",
+            "about.title": "Biraz da benden.",
+            "about.p1":
+              "İstanbul’da çalışan bir mobil mühendisim. 2021’den beri araç kiralama, B2B ekspertiz ve sürücü güvenliği alanlarında cross-platform uygulamalar yayınladım — çoğu zaman projenin tek mobil geliştiricisi olarak, mimariden mağaza yayınına kadar.",
+            "about.p2":
+              "Önemsediğim şey sıkıcı sürümler: hızlı kalan, çökmeyen ve kimsenin başında beklemek zorunda olmadığı bir pipeline’dan çıkan uygulamalar. Fırat Üniversitesi’nde Yazılım Mühendisliği okudum (2018–2023).",
+            "footer.note": "© 2026 Cihat Karaboğa. Özenle geliştirildi.",
+          },
+        };
 
-      var nodes = document.querySelectorAll('[data-i18n]');
-      var labelled = document.querySelectorAll('[data-i18n-label]');
-      var descMeta = document.getElementById('meta-description');
-      var buttons = document.querySelectorAll('[data-lang-btn]');
+        var nodes = document.querySelectorAll("[data-i18n]");
+        var labelled = document.querySelectorAll("[data-i18n-label]");
+        var descMeta = document.getElementById("meta-description");
+        var buttons = document.querySelectorAll("[data-lang-btn]");
 
-      // snapshot the English markup so switching back needs no second dictionary
-      STRINGS.en = {};
-      nodes.forEach(function (el) {
-        STRINGS.en[el.getAttribute('data-i18n')] = el.textContent.trim().replace(/\s+/g, ' ');
-      });
-      labelled.forEach(function (el) {
-        STRINGS.en[el.getAttribute('data-i18n-label')] = el.getAttribute('aria-label');
-      });
-      STRINGS.en['meta.title'] = document.title;
-      STRINGS.en['meta.desc'] = descMeta ? descMeta.content : '';
-
-      function applyLang(lang) {
-        var dict = STRINGS[lang] || STRINGS.en;
-        html.setAttribute('lang', lang);
-        html.setAttribute('data-lang', lang);
-
+        // snapshot the English markup so switching back needs no second dictionary
+        STRINGS.en = {};
         nodes.forEach(function (el) {
-          var v = dict[el.getAttribute('data-i18n')];
-          if (v != null) el.textContent = v;
+          STRINGS.en[el.getAttribute("data-i18n")] = el.textContent
+            .trim()
+            .replace(/\s+/g, " ");
         });
         labelled.forEach(function (el) {
-          var v = dict[el.getAttribute('data-i18n-label')];
-          if (v != null) el.setAttribute('aria-label', v);
+          STRINGS.en[el.getAttribute("data-i18n-label")] =
+            el.getAttribute("aria-label");
         });
-        if (dict['meta.title']) document.title = dict['meta.title'];
-        if (descMeta && dict['meta.desc']) descMeta.content = dict['meta.desc'];
+        STRINGS.en["meta.title"] = document.title;
+        STRINGS.en["meta.desc"] = descMeta ? descMeta.content : "";
+
+        function applyLang(lang) {
+          var dict = STRINGS[lang] || STRINGS.en;
+          html.setAttribute("lang", lang);
+          html.setAttribute("data-lang", lang);
+
+          nodes.forEach(function (el) {
+            var v = dict[el.getAttribute("data-i18n")];
+            if (v != null) el.textContent = v;
+          });
+          labelled.forEach(function (el) {
+            var v = dict[el.getAttribute("data-i18n-label")];
+            if (v != null) el.setAttribute("aria-label", v);
+          });
+          if (dict["meta.title"]) document.title = dict["meta.title"];
+          if (descMeta && dict["meta.desc"])
+            descMeta.content = dict["meta.desc"];
+
+          buttons.forEach(function (b) {
+            b.setAttribute(
+              "aria-pressed",
+              String(b.getAttribute("data-lang-btn") === lang),
+            );
+          });
+
+          // keep the URL shareable without adding a history entry
+          var url = new URL(location.href);
+          if (lang === "tr") url.searchParams.set("lang", "tr");
+          else url.searchParams.delete("lang");
+          try {
+            history.replaceState(
+              null,
+              "",
+              url.pathname + url.search + url.hash,
+            );
+          } catch (_) {}
+          document.getElementById("copy-status").textContent = "";
+        }
 
         buttons.forEach(function (b) {
-          b.setAttribute('aria-pressed', String(b.getAttribute('data-lang-btn') === lang));
-        });
-
-        // keep the URL shareable without adding a history entry
-        var url = new URL(location.href);
-        if (lang === 'tr') url.searchParams.set('lang', 'tr');
-        else url.searchParams.delete('lang');
-        history.replaceState(null, '', url.pathname + url.search + url.hash);
-      }
-
-      buttons.forEach(function (b) {
-        b.addEventListener('click', function () {
-          var lang = b.getAttribute('data-lang-btn');
-          localStorage.setItem('lang', lang);
-          applyLang(lang);
-        });
-      });
-
-      applyLang(html.getAttribute('data-lang') || 'en');
-
-      /* ---------- scroll reveal ---------- */
-      var reveals = document.querySelectorAll('.reveal');
-      if (!window.IntersectionObserver ||
-          window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-        reveals.forEach(function (el) { el.classList.add('is-visible') });
-      } else {
-        var io = new IntersectionObserver(function (entries) {
-          entries.forEach(function (e) {
-            if (!e.isIntersecting) return;
-            e.target.classList.add('is-visible');
-            io.unobserve(e.target);
+          b.addEventListener("click", function () {
+            var lang = b.getAttribute("data-lang-btn");
+            try {
+              localStorage.setItem("lang", lang);
+            } catch (_) {}
+            applyLang(lang);
           });
-        }, { rootMargin: '0px 0px -5% 0px', threshold: 0 });
-        reveals.forEach(function (el) { io.observe(el) });
+        });
 
-        // Safety net: the reveal is decoration, but the content it hides is the
-        // whole point of the page. If the observer never fires — a preview bot,
-        // a renderer that produces no frames — show everything anyway.
-        setTimeout(function () {
-          reveals.forEach(function (el) { el.classList.add('is-visible') });
-        }, 2500);
-      }
-    })();
-  </script>
-</body>
+        applyLang(html.getAttribute("data-lang") || "en");
+
+        var studio = document.querySelector(".studio");
+        document
+          .querySelectorAll("[data-platform-btn]")
+          .forEach(function (button) {
+            button.addEventListener("click", function () {
+              studio.dataset.platform = button.dataset.platformBtn;
+              document
+                .querySelectorAll("[data-platform-btn]")
+                .forEach(function (item) {
+                  item.setAttribute("aria-pressed", String(item === button));
+                });
+            });
+          });
+
+        document
+          .querySelectorAll("[data-copy-target]")
+          .forEach(function (button) {
+            button.addEventListener("click", async function () {
+              var emailLink = document.getElementById(
+                button.dataset.copyTarget,
+              );
+              var email = emailLink.textContent.trim();
+              var status = document.getElementById("copy-status");
+              status.textContent = "";
+              try {
+                await navigator.clipboard.writeText(email);
+                status.textContent =
+                  html.lang === "tr"
+                    ? email + " kopyalandı."
+                    : email + " copied.";
+              } catch (_) {
+                var range = document.createRange();
+                range.selectNodeContents(emailLink);
+                var selection = window.getSelection();
+                selection.removeAllRanges();
+                selection.addRange(range);
+                status.textContent =
+                  html.lang === "tr"
+                    ? "Adres seçildi. Kopyalayabilir veya e-posta bağlantısını kullanabilirsin."
+                    : "Address selected. Copy it manually or use the email link.";
+              }
+            });
+          });
+
+        var navLinks = Array.from(document.querySelectorAll(".site-nav a"));
+        var navSections = navLinks.map(function (link) {
+          return document.querySelector(link.hash);
+        });
+        var framePending = false;
+        function updateNavigation() {
+          var boundary =
+            document.querySelector(".site-header").getBoundingClientRect()
+              .height + 70;
+          var current = null;
+          navSections.forEach(function (section, index) {
+            if (section.getBoundingClientRect().top <= boundary)
+              current = navLinks[index];
+          });
+          if (
+            window.innerHeight + window.scrollY >=
+            document.documentElement.scrollHeight - 4
+          ) {
+            current = navLinks[navLinks.length - 1];
+          }
+          navLinks.forEach(function (link) {
+            if (link === current) link.setAttribute("aria-current", "location");
+            else link.removeAttribute("aria-current");
+          });
+          framePending = false;
+        }
+        function queueNavigation() {
+          if (!framePending) {
+            framePending = true;
+            requestAnimationFrame(updateNavigation);
+          }
+        }
+        window.addEventListener("scroll", queueNavigation, { passive: true });
+        window.addEventListener("resize", queueNavigation);
+        updateNavigation();
+
+        window
+          .matchMedia("(prefers-color-scheme: dark)")
+          .addEventListener("change", function (event) {
+            var stored;
+            try {
+              stored = localStorage.getItem("theme");
+            } catch (_) {}
+            if (themeChosen || stored === "light" || stored === "dark") return;
+            html.dataset.theme = event.matches ? "dark" : "light";
+            if (themeMeta)
+              themeMeta.content = event.matches ? "#101522" : "#f7f8fc";
+          });
+      })();
+    </script>
+  </body>
 </html>
